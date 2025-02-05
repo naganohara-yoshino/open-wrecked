@@ -1,5 +1,5 @@
 label start:
-    $ quick_menu = False
+    # $ quick_menu = False
     $ _dismiss_pause = False
     stop music
     window hide
