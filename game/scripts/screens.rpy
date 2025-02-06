@@ -236,33 +236,54 @@ screen quick_menu():
     zorder 100
 
     if quick_menu:
-
+        
         vbox:
-            # style_prefix "quick"
-            xpos 0.80
+            xpos 0.95
             ypos 0.06
             spacing 80
-            # xalign 0.5
-            # yalign 1.0
+    
             imagebutton:
-                xpos 0.95
-                idle "images/UI/quick_menu/rollback.png" 
-                hover "images/UI/quick_menu/rollback.png" 
+                idle "images/UI/quick_menu/rollback.png"
+                hover "images/UI/quick_menu/rollback.png"
                 at button_transform
                 action Rollback()
             
-            imagebutton xpos 0.95 idle "images/UI/quick_menu/history.png" action ShowMenu('history')
-            imagebutton xpos 0.95 idle "images/UI/quick_menu/fast_forward.png" action Skip() alternate Skip(fast=True, confirm=True)
-            imagebutton xpos 0.95 idle "images/UI/quick_menu/auto.png" action Preference("auto-forward", "toggle")
-            imagebutton xpos 0.95 idle "images/UI/quick_menu/save.png" action ShowMenu('save')
-            imagebutton xpos 0.95 idle "images/UI/quick_menu/settings.png" action ShowMenu('preferences')
+            imagebutton:
+                idle "images/UI/quick_menu/history.png"
+                hover "images/UI/quick_menu/history.png"
+                at button_transform
+                action ShowMenu('history')
+            
+            imagebutton:
+                idle "images/UI/quick_menu/fast_forward.png" 
+                hover "images/UI/quick_menu/fast_forward.png" 
+                at button_transform
+                action Skip() alternate Skip(fast=True, confirm=True)
+            
+            imagebutton:
+                idle "images/UI/quick_menu/auto.png" 
+                hover "images/UI/quick_menu/auto.png"
+                at button_transform
+                action Preference("auto-forward", "toggle")
+
+            imagebutton:
+                idle "images/UI/quick_menu/save.png" 
+                hover "images/UI/quick_menu/save.png"
+                at button_transform
+                action ShowMenu('save')
+
+            imagebutton:
+                idle "images/UI/quick_menu/settings.png"
+                hover "images/UI/quick_menu/settings.png"
+                at button_transform
+                action ShowMenu('preferences')
+
 
 transform button_transform:
-    # 根据状态调整缩放
     on hover:
-        linear 0.2 xpos 0.50
+        linear 0.15 xpos -0.5
     on idle:
-        linear 0.2 xpos 0.95
+        linear 0.15 xpos 0.0
 
 
 ## 此代码确保只要用户没有主动隐藏界面，就会在游戏中显示 quick_menu 屏幕。
