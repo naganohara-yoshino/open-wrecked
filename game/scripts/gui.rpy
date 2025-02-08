@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 ## 初始化
 ################################################################################
 
@@ -206,8 +206,8 @@ define gui.choice_button_borders = None #Borders(300, 20, 300, 20)
 define gui.choice_button_text_font = gui.name_text_font
 define gui.choice_button_text_size = 96
 define gui.choice_button_text_xaligh = 0.5
-define gui.choice_button_text_idle_color = '#888888'
-define gui.choice_button_text_hover_color = "#ffffff"
+define gui.choice_button_text_idle_color = '#8E6338'
+define gui.choice_button_text_hover_color = '#8E6338'
 define gui.choice_button_text_insensitive_color = '#8888887f'
 
 
