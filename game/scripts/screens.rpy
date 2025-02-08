@@ -201,32 +201,52 @@ style input:
 ## https://doc.renpy.cn/zh-CN/screen_special.html#choice
 
 screen choice(items):
-    style_prefix "choice"
+    # style_prefix "choice"
+    window:
+        background "gui/button/choice_idle_background.png"  #你的背景图片
+        padding (20, 20)  # 内边距，防止文本紧贴边缘
+        xpos 0.6
+        ypos 0.35
+        anchor (0.5, 0.5)
+        # 居中显示
+        vbox:
+            xpos 0.3
+            ypos 0.7
+            anchor (0.5, 0.5)
 
-    vbox:
-        for i in items:
-            textbutton i.caption action i.action
+            box_align 0.5
+            spacing 120#gui.choice_spacing
+
+            for i in items:
+                textbutton i.caption:
+                    action i.action 
+                    text_style "neo_choice_button_text"
 
 
-style choice_vbox is vbox
-style choice_button is button
-style choice_button_text:
-    xalign 0.33
-    yalign 0.5
 
-style choice_vbox:
-    xalign 0.5
-    ypos 1000
-    yanchor 0.5
 
-    spacing gui.choice_spacing
-
-style choice_button is default:
-    properties gui.button_properties("choice_button")
-
-style choice_button_text is default:
+# style choice_vbox is vbox
+# style choice_button is button
+style neo_choice_button_text:
+    # xpos 0.5
+    # anchor (0.5, 0.5)
     properties gui.text_properties("choice_button")
     font "fs.ttf"
+    hover_outlines [(absolute(4), "#ffffff", absolute(0), absolute(0))]
+
+
+# style choice_vbox:
+#     xalign 0.5
+#     ypos 1000
+#     yanchor 0.5
+
+#     spacing gui.choice_spacing
+
+# style choice_button is default:
+#     properties gui.button_properties("choice_button")
+
+# style choice_button_text is default:
+
 
 ## 快捷菜单屏幕 ######################################################################
 ##

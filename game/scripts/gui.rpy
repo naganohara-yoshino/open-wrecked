@@ -198,9 +198,9 @@ define gui.quick_button_ypos = 520
 ## 选项按钮 ########################################################################
 ##
 ## 游戏内菜单使用的选项按钮。
-define choice_scale = 21 #选项放大倍数
-define gui.choice_button_width = 128 * choice_scale
-define gui.choice_button_height = 35 * choice_scale
+# define choice_scale = 21 #选项放大倍数
+define gui.choice_button_width = None #128 * choice_scale
+define gui.choice_button_height = None #35 * choice_scale
 define gui.choice_button_tile = False
 define gui.choice_button_borders = None #Borders(300, 20, 300, 20)
 define gui.choice_button_text_font = gui.name_text_font
