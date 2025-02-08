@@ -238,21 +238,54 @@ screen quick_menu():
     zorder 100
 
     if quick_menu:
+        
+        vbox:
+            xpos 0.95
+            ypos 0.06
+            spacing 80
+    
+            imagebutton:
+                idle "images/UI/quick_menu/rollback.png"
+                hover "images/UI/quick_menu/rollback.png"
+                at button_transform
+                action Rollback()
+            
+            imagebutton:
+                idle "images/UI/quick_menu/history.png"
+                hover "images/UI/quick_menu/history.png"
+                at button_transform
+                action ShowMenu('history')
+            
+            imagebutton:
+                idle "images/UI/quick_menu/fast_forward.png" 
+                hover "images/UI/quick_menu/fast_forward.png" 
+                at button_transform
+                action Skip() alternate Skip(fast=True, confirm=True)
+            
+            imagebutton:
+                idle "images/UI/quick_menu/auto.png" 
+                hover "images/UI/quick_menu/auto.png"
+                at button_transform
+                action Preference("auto-forward", "toggle")
 
-        hbox:
-            style_prefix "quick"
+            imagebutton:
+                idle "images/UI/quick_menu/save.png" 
+                hover "images/UI/quick_menu/save.png"
+                at button_transform
+                action ShowMenu('save')
 
-            xalign 0.5
-            yalign 1.0
+            imagebutton:
+                idle "images/UI/quick_menu/settings.png"
+                hover "images/UI/quick_menu/settings.png"
+                at button_transform
+                action ShowMenu('preferences')
 
-            textbutton _("回退") action Rollback()
-            textbutton _("历史") action ShowMenu('history')
-            textbutton _("快进") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("自动") action Preference("auto-forward", "toggle")
-            textbutton _("保存") action ShowMenu('save')
-            textbutton _("快存") action QuickSave()
-            textbutton _("快读") action QuickLoad()
-            textbutton _("设置") action ShowMenu('preferences')
+
+transform button_transform:
+    on hover:
+        linear 0.15 xpos -0.5
+    on idle:
+        linear 0.15 xpos 0.0
 
 
 ## 此代码确保只要用户没有主动隐藏界面，就会在游戏中显示 quick_menu 屏幕。
