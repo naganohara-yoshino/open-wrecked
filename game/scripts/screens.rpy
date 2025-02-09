@@ -210,17 +210,22 @@ screen choice(items):
         anchor (0.5, 0.5)
         # 居中显示
         vbox:
-            xpos 0.3
-            ypos 0.7
+            xpos 0.4
+            ypos 0.72
             anchor (0.5, 0.5)
-
+            
             box_align 0.5
             spacing 120#gui.choice_spacing
 
+        
+
             for i in items:
-                textbutton i.caption:
-                    action i.action 
-                    text_style "neo_choice_button_text"
+                vbox: 
+                    xsize 2500
+                    ysize 130
+                    textbutton i.caption:
+                        action i.action 
+                        text_style "neo_choice_button_text"
 
 
 
