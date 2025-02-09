@@ -210,17 +210,22 @@ screen choice(items):
         anchor (0.5, 0.5)
         # 居中显示
         vbox:
-            xpos 0.3
-            ypos 0.7
+            xpos 0.4
+            ypos 0.72
             anchor (0.5, 0.5)
-
+            
             box_align 0.5
             spacing 120#gui.choice_spacing
 
+        
+
             for i in items:
-                textbutton i.caption:
-                    action i.action 
-                    text_style "neo_choice_button_text"
+                vbox: 
+                    xsize 2500
+                    ysize 130
+                    textbutton i.caption:
+                        action i.action 
+                        text_style "neo_choice_button_text"
 
 
 
@@ -265,38 +270,38 @@ screen quick_menu():
             spacing 80
     
             imagebutton:
-                idle "images/UI/quick_menu/rollback.png"
-                hover "images/UI/quick_menu/rollback.png"
+                idle "gui/quickbutton/rollback.png"
+                hover "gui/quickbutton/rollback.png"
                 at button_transform
                 action Rollback()
             
             imagebutton:
-                idle "images/UI/quick_menu/history.png"
-                hover "images/UI/quick_menu/history.png"
+                idle "gui/quickbutton/history.png"
+                hover "gui/quickbutton/history.png"
                 at button_transform
                 action ShowMenu('history')
             
             imagebutton:
-                idle "images/UI/quick_menu/fast_forward.png" 
-                hover "images/UI/quick_menu/fast_forward.png" 
+                idle "gui/quickbutton/fast_forward.png" 
+                hover "gui/quickbutton/fast_forward.png" 
                 at button_transform
                 action Skip() alternate Skip(fast=True, confirm=True)
             
             imagebutton:
-                idle "images/UI/quick_menu/auto.png" 
-                hover "images/UI/quick_menu/auto.png"
+                idle "gui/quickbutton/auto.png" 
+                hover "gui/quickbutton/auto.png"
                 at button_transform
                 action Preference("auto-forward", "toggle")
 
             imagebutton:
-                idle "images/UI/quick_menu/save.png" 
-                hover "images/UI/quick_menu/save.png"
+                idle "gui/quickbutton/save.png" 
+                hover "gui/quickbutton/save.png"
                 at button_transform
                 action ShowMenu('save')
 
             imagebutton:
-                idle "images/UI/quick_menu/settings.png"
-                hover "images/UI/quick_menu/settings.png"
+                idle "gui/quickbutton/settings.png"
+                hover "gui/quickbutton/settings.png"
                 at button_transform
                 action ShowMenu('preferences')
 
