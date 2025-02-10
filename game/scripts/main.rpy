@@ -36,4 +36,6 @@ label start:
     hide screen start_sentence with Fade(1,0,0)
     $ quick_menu = True
 
-    call chapter1
+    call chapter01
+
+    call chapter01_5
