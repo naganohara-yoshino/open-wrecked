@@ -1,5 +1,8 @@
 label chapter01:
 
+    image snow1 = SnowBlossom("images/OTHER/snowflake.png", count=100)
+    show snow
+
     "下了雪的街道，走起来总是比以往更加漫长" with Dissolve(2)
     "雪在地上积了厚厚的一层，坑坑洼洼，在路灯下显得斑驳
     陆离，随着着车道延伸到远方，像一条银鳞的蛇钻回了阴
