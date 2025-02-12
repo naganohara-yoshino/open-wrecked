@@ -1,49 +1,60 @@
-screen chat_screen(dialog):
-    modal True
+screen chat_screen(group_title, dialog):
+    # modal True
     zorder 4
+
     frame:
+        xsize 972
+        ysize 2100
 
-        xpadding 50
-        top_padding 50
-        bottom_padding 430
-        xpos 1000
-        ypos 20
-        xsize 1036
-        ysize 2160
-        
-        background Frame("images/OTHER/qq.png")
+        left_padding 35
+        right_padding 55
+        top_padding 87
+        bottom_padding 410
 
-        default message_index = 1
+        align (0.5, 0.5)
+
+
+        background Frame("gui/simulatedphone/simulated_phone.png")
+
+        default message_index = 0
         
         viewport id "vp":
             # draggable True
             mousewheel True
             yinitial 1.0
-            xsize 1000
+            xsize 900
             ypos 0.1
 
             vbox:
-                xsize 600
-                spacing 50
+                xsize 900
+                spacing 40
                 
                 for i, msg in enumerate(dialog):
                     if i < message_index:
                         use message(**msg)
 
-        key "mouseup_1" action [
-            IncrementScreenVariable("message_index"),
-            Scroll("vp", "vertical increase" , amount="page", delay=0.5)
-        ]
+        key "mouseup_1" action If(message_index  == len(dialog),
+            [
+                Hide("chat_screen", transition = Dissolve(2)),
+            ],
+            [
+                IncrementScreenVariable("message_index"),
+                Scroll("vp", "vertical increase" , amount="page", delay=0.5),
+                Hide("say")
+            ])
 
+        text group_title:
 
+            pos (0.1, 0.042)
 
-
+            font "fonts/SourceHanSansLite.ttf"
+            size 55
 
 
 screen message(*, name, content, avatar, from_myself = False):
     if not from_myself:
         hbox:
-            xsize 1000
+            xsize 400
             xalign 0.0
             spacing 20
             at message_appear
@@ -59,17 +70,15 @@ screen message(*, name, content, avatar, from_myself = False):
                 vbox:
                     use msg_bubble(content = content)
 
-            null width 30
 
     else:
         hbox:
-            xsize 1000
-            xalign 1.0
+            xsize 770
+            xalign 0.5
             spacing 20
             at message_appear
 
 
-            null width 30
 
             vbox:
                 vbox:
@@ -90,10 +99,10 @@ screen msg_bubble(*, content, from_myself = False , bubble_width = 700):
         xsize bubble_width
 
         if from_myself:
-            background Frame("images/OTHER/Rectangleb.png", 25, 25, 25, 25)
+            background Frame("gui/simulatedphone/rectangle_blue.png", 25, 25, 25, 25)
             text content pos (0, 0) color "#ffffff" style "msg_bubble_text" 
         else:
-            background Frame("images/OTHER/Rectangle.png", 25, 25, 25, 25)
+            background Frame("gui/simulatedphone/rectangle.png", 25, 25, 25, 25)
             text content pos (0, 0) color "#000000" style "msg_bubble_text"
 
             
@@ -110,15 +119,24 @@ transform message_appear:
         easein_back 0.4 yoffset 0     
 
 
+transform phone_appear: #Used only when the dialogue have one element
+    xcenter 0.5
+    yalign 0.5
+
+    on show:
+        yoffset 1080
+        easein_back 1.0 yoffset 0
+
+
 
 style msg_bubble_text:
     font "fonts/SourceHanSansLite.ttf"
-    size 70
+    size 60
 
 style info_text:
     font "fonts/SourceHanSansLite.ttf"
     color "#9B9B9B"
-    size 55
+    size 50
 
 # screen img_message(*, name, img, avatar):
 
