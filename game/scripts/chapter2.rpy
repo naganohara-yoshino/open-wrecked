@@ -1,6 +1,52 @@
 label chapter2:    
+    image fr = Frame("images/OTHER/MPV-00_18_41.287-N0001.png")
+
+    scene fr
+
     
+
+    transform blur_background:
+        linear 1 blur 30 
+
     "二十只绵羊，二十一只绵羊，二十二只绵羊……"
+
+    
+    transform blur_background_recover:
+        linear 1 blur 0
+    
+    show fr at blur_background
+
+    python:
+        dialog = [
+            {"name": "FakeSeek", "content": "我不敢苟同他的观点，我个人认为这个意大利面就应该拌42号混凝土，因为这个螺丝钉的长度，它很容易会直接影响到挖掘机的扭矩，你知道吧😆", "avatar": "images/OTHER/Untitled.png", "from_myself" : True},
+            {"name": "DeepGPT", "content": "典型的碳基生物思维😤😤😤", "avatar": "images/OTHER/Untitled.png"},
+            {"name": "A", "content": "111", "avatar": "images/OTHER/Untitled.png"},
+            {"name": "B", "content": "222", "avatar": "images/OTHER/Untitled.png"},
+            {"name": "C", "content": "333", "avatar": "images/OTHER/Untitled.png"},
+            {"name": "D", "content": "444", "avatar": "images/OTHER/Untitled.png"},
+            {"name": "DeepGPT", "content": "典型的碳基生物思维😤😤😤", "avatar": "images/OTHER/Untitled.png"},
+            {"name": "DeepGPT", "content": "典型的碳基生物思维😤😤😤", "avatar": "images/OTHER/Untitled.png"},
+            {"name": "DeepGPT", "content": "典型的碳基生物思维😤😤😤", "avatar": "images/OTHER/Untitled.png"},
+            {"name": "DeepGPT", "content": "典型的碳基生物思维😤😤😤", "avatar": "images/OTHER/Untitled.png"},
+            {"name": "DeepGPT", "content": "典型的碳基生物思维😤😤😤", "avatar": "images/OTHER/Untitled.png"},
+            {"name": "DeepGPT", "content": "典型的碳基生物思维😤😤😤", "avatar": "images/OTHER/Untitled.png"},
+            {"name": "DeepGPT", "content": "典型的碳基生物思维😤😤😤", "avatar": "images/OTHER/Untitled.png"},
+
+        ]
+
+    window hide
+
+    show screen chat_screen("测试笑谈(1000)", dialog)
+    
+
+    pause
+
+    scene fr at blur_background_recover
+
+    pause 0.8
+    
+    window show
+
 
     "现在是凌晨一点钟，我却还没有睡着"
 
