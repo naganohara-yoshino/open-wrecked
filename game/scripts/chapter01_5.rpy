@@ -117,6 +117,5 @@ label chapter01_5:
 
     脚步愈迷，如舞，如禅
     """
-    jump Chapter02
 
 
