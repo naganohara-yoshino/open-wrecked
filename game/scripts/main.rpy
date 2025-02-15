@@ -16,21 +16,25 @@ label splashscreen:
     with Pause(1)
     return
 
+screen start_sentence:
+    frame:
+        xsize 3840
+        ysize 2160
+        vbox:
+            xalign 0.5
+            yalign 0.5
+            spacing 40
+            text "谁此刻没有屋，就不会再造屋\n谁此刻孤独，就会长久孤独" color"#ffffff" size 120 xalign 0.5 yalign 0.5
+            text "——赖内·马利亚·里尔克" color"#ffffff" size 80 xalign 1.0 
+
+
 label start:
+
     $ quick_menu = False
     $ _dismiss_pause = False
     stop music
     window hide
-    screen start_sentence:
-        frame:
-            xsize 3840
-            ysize 2160
-            vbox:
-                xalign 0.5
-                yalign 0.5
-                spacing 40
-                text "谁此刻没有屋，就不会再造屋\n谁此刻孤独，就会长久孤独" color"#ffffff" size 120 xalign 0.5 yalign 0.5
-                text "——赖内·马利亚·里尔克" color"#ffffff" size 80 xalign 1.0 
+
     show screen start_sentence with Fade(1,0,1)
     with Pause(5)
     hide screen start_sentence with Fade(1,0,0)
@@ -39,3 +43,5 @@ label start:
     call chapter01
 
     call chapter01_5
+
+    call chapter2
