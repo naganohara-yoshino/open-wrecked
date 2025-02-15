@@ -20,7 +20,7 @@ label chapter2:
         dialog = [
             {"name": "FakeSeek", "content": "我不敢苟同他的观点，我个人认为这个意大利面就应该拌42号混凝土，因为这个螺丝钉的长度，它很容易会直接影响到挖掘机的扭矩，你知道吧😆", "avatar": "images/OTHER/Untitled.png", "from_myself" : True},
             {"name": "DeepGPT", "content": "典型的碳基生物思维😤😤😤", "avatar": "images/OTHER/Untitled.png"},
-            {"name": "A", "content": "111", "avatar": "images/OTHER/Untitled.png"},
+            {"name": "A", "content": "111", "avatar": "images/OTHER/Untitled.png", "extra_display": "25:61"},
             {"name": "B", "content": "222", "avatar": "images/OTHER/Untitled.png"},
             {"name": "C", "content": "333", "avatar": "images/OTHER/Untitled.png"},
             {"name": "D", "content": "444", "avatar": "images/OTHER/Untitled.png"},

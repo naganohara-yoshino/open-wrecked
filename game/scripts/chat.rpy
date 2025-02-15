@@ -3,13 +3,13 @@ screen chat_screen(group_title, dialog):
     zorder 4
 
     frame:
-        xsize 972
+        xsize 975
         ysize 2100
 
         left_padding 35
         right_padding 55
         top_padding 87
-        bottom_padding 410
+        bottom_padding 340
 
         align (0.5, 0.5)
 
@@ -31,6 +31,10 @@ screen chat_screen(group_title, dialog):
                 
                 for i, msg in enumerate(dialog):
                     if i < message_index:
+                        $ info = msg.get("extra_display", None)
+                        if info:
+                            null height 30
+                            text info style "info_text" xalign 0.5
                         use message(**msg)
 
         key "mouseup_1" action If(message_index  == len(dialog),
@@ -51,7 +55,7 @@ screen chat_screen(group_title, dialog):
             size 55
 
 
-screen message(*, name, content, avatar, from_myself = False):
+screen message(*, name, content, avatar, from_myself = False, **kw):
     if not from_myself:
         hbox:
             xsize 400
@@ -136,7 +140,7 @@ style msg_bubble_text:
 style info_text:
     font "fonts/SourceHanSansLite.ttf"
     color "#9B9B9B"
-    size 50
+    size 45
 
 # screen img_message(*, name, img, avatar):
 
