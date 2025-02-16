@@ -3,13 +3,13 @@ screen chat_screen(group_title, dialog):
     zorder 4
 
     frame:
-        xsize 975
+        xsize 1000
         ysize 2100
 
-        left_padding 35
-        right_padding 55
-        top_padding 87
-        bottom_padding 340
+        left_padding 40
+        right_padding 60
+        top_padding 88
+        bottom_padding 400
 
         align (0.5, 0.5)
 
@@ -22,7 +22,7 @@ screen chat_screen(group_title, dialog):
             # draggable True
             mousewheel True
             yinitial 1.0
-            xsize 900
+            xsize 920
             ypos 0.1
 
             vbox:
@@ -39,7 +39,7 @@ screen chat_screen(group_title, dialog):
 
         key "mouseup_1" action If(message_index  == len(dialog),
             [
-                Hide("chat_screen", transition = Dissolve(2)),
+                Hide("chat_screen", transition = Dissolve(1)), Return(0)
             ],
             [
                 IncrementScreenVariable("message_index"),
@@ -51,14 +51,14 @@ screen chat_screen(group_title, dialog):
 
             pos (0.1, 0.042)
 
-            font "fonts/SourceHanSansLite.ttf"
-            size 55
+            font "ht.ttf"
+            size 60
 
 
 screen message(*, name, content, avatar, from_myself = False, **kw):
     if not from_myself:
         hbox:
-            xsize 400
+            xsize 810
             xalign 0.0
             spacing 20
             at message_appear
@@ -68,6 +68,8 @@ screen message(*, name, content, avatar, from_myself = False, **kw):
                 add avatar 
 
             vbox:
+                xsize 700
+                spacing 20
                 vbox:
                     xalign 0.0
                     text name style "info_text"
@@ -77,30 +79,32 @@ screen message(*, name, content, avatar, from_myself = False, **kw):
 
     else:
         hbox:
-            xsize 770
-            xalign 0.5
+            xsize 810
+            xalign 1.0
             spacing 20
             at message_appear
 
-
-
             vbox:
+                xsize 700
+                spacing 20
                 vbox:
                     xalign 1.0
                     text name style "info_text"
                 vbox:
+                    xalign 1.0
                     use msg_bubble(content = content, from_myself = True)
 
             vbox:
+                xalign 0.0
                 null height 20
                 add avatar 
 
 
 
-screen msg_bubble(*, content, from_myself = False , bubble_width = 700):
+screen msg_bubble(*, content, from_myself = False):
     frame:
         padding (40,40)
-        xsize bubble_width
+        xsize None
 
         if from_myself:
             background Frame("gui/simulatedphone/rectangle_blue.png", 25, 25, 25, 25)
@@ -134,15 +138,20 @@ transform phone_appear: #Used only when the dialogue have one element
 
 
 style msg_bubble_text:
-    font "fonts/SourceHanSansLite.ttf"
+    font "fonts/ht.ttf"
     size 60
 
 style info_text:
-    font "fonts/SourceHanSansLite.ttf"
+    font "fonts/ht.ttf"
     color "#9B9B9B"
     size 45
 
 # screen img_message(*, name, img, avatar):
 
+## 显示手机时用的模糊
+transform blur_background:
+        linear 1 blur 30 
 
+transform blur_background_recover:
+        linear 1 blur 0
 
