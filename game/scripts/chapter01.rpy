@@ -1027,8 +1027,7 @@ label chapter01:
         vbox:
             xalign 0.5
             yalign 0.5
-            button:
-                text "——这是雪夜和星空的舞会"outlines[(absolute(5), "#ffffff", absolute(0), absolute(0))] color"#000000" size 160 
+            text "——这是雪夜和星空的舞会" outlines[(absolute(5), "#ffffff", absolute(0), absolute(0))] color"#000000" size 160 
     show screen sentence_2 with Dissolve(1)
     with Pause(3)
     hide screen sentence_2 with Dissolve(1)
