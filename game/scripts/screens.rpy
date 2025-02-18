@@ -1698,3 +1698,29 @@ style slider_slider:
     xsize 1800
 
 
+
+################################################################################
+## 打字机
+################################################################################
+
+screen typewriter(input, custom_style, prefix = None, interval = 0.7):
+
+    default char_index = 0
+
+    timer interval:
+        repeat True 
+        action IncrementLocalVariable("char_index")
+
+    hbox:
+        if prefix:
+            text prefix style custom_style
+        for i, char in enumerate(input):
+            if i < char_index:
+                vbox:
+                    text char style custom_style at char_appear
+
+
+transform char_appear:
+    alpha 0.0
+    ease 0.4 alpha 1.0
+            
