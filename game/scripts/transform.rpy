@@ -48,9 +48,9 @@ transform move_right_t:
 
 ## 背景模糊
 transform bg_blur_t:
-    blur 40
+    blur 30
     parallel:
-        linear 1.5 blur 0
+        linear 2 blur 0
 
 ## 镜头拉近
 transform zoom_in_t:
@@ -177,3 +177,16 @@ label bg_transition_enable:
         _dismiss_pause = True
         quick_menu = True
     return
+
+#   睁闭眼睛特效
+init python:
+    def eyewarp(x):
+        return x**1.33
+    eye_open = ImageDissolve("gui/transition/eye.png", 0.5, ramplen=128, reverse=False, time_warp=eyewarp)
+    eye_shut = ImageDissolve("gui/transition/eye.png", 0.5, ramplen=128, reverse=True, time_warp=eyewarp)
+image black:
+    Solid("#000")
+image white:
+    Solid("#FFF")
+
+

@@ -1,4 +1,6 @@
 ## 立绘的设定文件
+## 雪花
+image snow = SnowBlossom("gui/snow/small.png",count=100)
 
 ## 萨瓦的大脸
 image sw_face:
@@ -51,5 +53,34 @@ image cy_winter_fluster:
     yanchor 0.47
     ypos 2160
     
-    
+## 玉米-冬-和蔼
+image ym_winter_kind:
+    "images/LH/ym_winter_kind.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+    zoom 0.95
 
+## 玉米-冬-欣喜
+image ym_winter_happy:
+    "images/LH/ym_winter_happy.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+    zoom 0.95
+
+## 玉米-冬-挺好颜
+image ym_winter_ting:
+    "images/LH/ym_winter_ting.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+    zoom 0.95
+
+## 玉米-冬-挺好颜2
+image ym_winter_ting_2:
+    "images/LH/ym_winter_ting_2.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+    zoom 0.95

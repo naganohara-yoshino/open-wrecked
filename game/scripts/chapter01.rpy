@@ -1,15 +1,13 @@
 label chapter01:
-
-    image snow = SnowBlossom("images/OTHER/snowflake.png", count=100)
-    show snow
-
+    play music "audio/Calm/CalmEmotion.mp3"
+    $ quick_menu = True
     "下了雪的街道，走起来总是比以往更加漫长" with Dissolve(2)
     "雪在地上积了厚厚的一层，坑坑洼洼，在路灯下显得斑驳
     陆离，随着着车道延伸到远方，像一条银鳞的蛇钻回了阴
     暗处的窝"
     c"好冷……"
-    scene 1_street_with_snow at bg_blur_t
-    with Pause(2.5)
+    scene 1_street_with_snow at bg_blur_t 
+    with Pause(1)
     "从什么时候开始的呢，这座城市里的人不再为大雪天感到欣喜了" with Dissolve(2)
     """
 
@@ -25,7 +23,7 @@ label chapter01:
     
     听起来就很离谱不是吗？
     
-    明明是“变暖”诶，居然冬天还会变得更冷什么的
+    明明是“变暖”欸，居然冬天还会变得更冷什么的
     """
     c"阿……阿嚏……"
     """
@@ -50,7 +48,10 @@ label chapter01:
             xalign 0.5
             yalign 0.5
             button:
-                text "也不是我想把那些事情都搞砸的"outlines[(absolute(5), "#ffffff", absolute(0), absolute(0))] color"#000000" size 160 
+                text "也不是我想把那些事情都搞砸的":
+                    outlines[(absolute(5), "#ffffff", absolute(0), absolute(0))] 
+                    color"#000000" 
+                    size 160
     show screen sentence_1 with Dissolve(1)
     with Pause(3)
     hide screen sentence_1 with Dissolve(1)
@@ -64,8 +65,10 @@ label chapter01:
     指示灯在厚重的云层中一明一灭，像在雪地里长途跋涉似的……
     """
     c"该回去了……"
-    scene 2_alley_with_snow
-    with fade
+    define down1 = ImageDissolve("gui/transition/para.png",0.6,128)
+    scene black with dissolve
+    scene 2_alley_with_snow with down1
+
    
     """
     现在已经走到一个完全不认识的地方来了……
@@ -148,7 +151,7 @@ label chapter01:
             我快步上前
             """
 
-    scene 1_wreckedsw
+    scene 1_wrecked_sawa
     with fade
     play music "audio/Nervous/SilentMalice.mp3" fadein 4
     """
@@ -481,7 +484,7 @@ label chapter01:
 
     啊不，大概也是网名吧
     """
-    s"“潮鸢”吗……感觉真的在哪里听过诶"
+    s"“潮鸢”吗……感觉真的在哪里听过欸"
     c"等一下什么叫“真的听过”啊"
     s"啊，之前说见过你是假的啦"
     c"什么啊喂！"
@@ -1016,6 +1019,7 @@ label chapter01:
     with Pause(1)
     play music "audio/Calm/CalmEmotion.mp3"
     "走出咖啡店时，天空下起了绵绵的小雪" with Dissolve(1)
+    show snow
     """
     我还沉浸在那杯“萨瓦特调”里，心情很是愉悦
     
@@ -1027,7 +1031,8 @@ label chapter01:
         vbox:
             xalign 0.5
             yalign 0.5
-            text "——这是雪夜和星空的舞会" outlines[(absolute(5), "#ffffff", absolute(0), absolute(0))] color"#000000" size 160 
+            button:
+                text "——这是雪夜和星空的舞会"outlines[(absolute(5), "#ffffff", absolute(0), absolute(0))] color"#000000" size 160 
     show screen sentence_2 with Dissolve(1)
     with Pause(3)
     hide screen sentence_2 with Dissolve(1)
@@ -1041,6 +1046,7 @@ label chapter01:
     和她在一起，我的生活又会有怎样的不同呢——
     """
     stop music fadeout 4
+
 
     
 

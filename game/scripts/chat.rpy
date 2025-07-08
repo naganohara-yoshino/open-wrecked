@@ -33,14 +33,13 @@ screen chat_screen(group_title, dialog):
                     if i < message_index:
                         $ info = msg.get("extra_display", None)
                         if info:
-                            null height 20
+                            null height 30
                             text info style "info_text" xalign 0.5
                         use message(**msg)
 
         key "mouseup_1" action If(message_index  == len(dialog),
             [
-                Hide("chat_screen", transition = Dissolve(1)), 
-                Return(0)
+                Hide("chat_screen", transition = Dissolve(1)), Return(0)
             ],
             [
                 IncrementScreenVariable("message_index"),
@@ -56,8 +55,7 @@ screen chat_screen(group_title, dialog):
             size 60
 
 
-screen message(*, name, avatar, from_myself = False, **kw):
-
+screen message(*, name, content, avatar, from_myself = False, **kw):
     if not from_myself:
         hbox:
             xsize 810
@@ -76,10 +74,7 @@ screen message(*, name, avatar, from_myself = False, **kw):
                     xalign 0.0
                     text name style "info_text"
                 vbox:
-                    if "image" in kw:
-                        use img_bubble(img = kw["image"])
-                    elif "content" in kw:
-                        use msg_bubble(content = kw["content"])
+                    use msg_bubble(content = content)
 
 
     else:
@@ -97,10 +92,7 @@ screen message(*, name, avatar, from_myself = False, **kw):
                     text name style "info_text"
                 vbox:
                     xalign 1.0
-                    if "image" in kw:
-                        use img_bubble(img = kw["image"])
-                    elif "content" in kw:
-                        use msg_bubble(content = kw["content"], from_myself = True)
+                    use msg_bubble(content = content, from_myself = True)
 
             vbox:
                 xalign 0.0
@@ -108,26 +100,11 @@ screen message(*, name, avatar, from_myself = False, **kw):
                 add avatar 
 
 
-screen img_bubble(*, img):
-    
-    python:
-        x, _ = renpy.image_size(img)
-        mask = Frame("gui/simulatedphone/mask.png", 25, 25, 25, 25)
-        result = AlphaMask(img ,mask)
-        ratio = 600.0 / x
-
-    vbox:
-        xmaximum 600
-        if x < 600:
-            add result
-        else:
-            add result zoom ratio
-
 
 screen msg_bubble(*, content, from_myself = False):
     frame:
         padding (40,40)
-        xmaximum 700
+        xsize None
 
         if from_myself:
             background Frame("gui/simulatedphone/rectangle_blue.png", 25, 25, 25, 25)
@@ -149,13 +126,15 @@ transform message_appear:
     parallel:
         easein_back 0.4 yoffset 0     
 
-transform phone_appear:
+
+transform phone_appear: #Used only when the dialogue have one element
     xcenter 0.5
     yalign 0.5
 
     on show:
         yoffset 1080
         easein_back 1.0 yoffset 0
+
 
 
 style msg_bubble_text:
@@ -167,6 +146,7 @@ style info_text:
     color "#9B9B9B"
     size 45
 
+# screen img_message(*, name, img, avatar):
 
 ## 显示手机时用的模糊
 transform blur_background:

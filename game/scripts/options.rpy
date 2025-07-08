@@ -112,7 +112,7 @@ define config.window_hide_transition = Dissolve(.2)
 
 ## 控制默认的文字显示速度。默认的 0 为瞬间，而其他数字则是每秒显示出的字符数。
 
-default preferences.text_cps = 20
+default preferences.text_cps = 0
 
 
 ## 默认的自动前进延迟。数字越大，等待时间越长，有效范围为 0 - 30。
@@ -139,7 +139,7 @@ define config.save_directory = "Wrecked-1731845167"
 ##
 ## 在任务栏或 Dock 上显示的图标。
 
-define config.window_icon = "icon.png"
+define config.window_icon = "images/Icon/icon_leviathan.png"
 
 
 ## 构建配置 ########################################################################

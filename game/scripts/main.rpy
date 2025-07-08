@@ -4,6 +4,7 @@ define y = Character("玉米")
 define s = Character("萨瓦")
 define b = Character("白楽")
 define sn = Character("少女")
+define bn = Character("白发少女")
 
 ## 启动动画
 image splash = "splash.png"
@@ -24,8 +25,8 @@ screen start_sentence:
             xalign 0.5
             yalign 0.5
             spacing 40
-            text "谁此刻没有屋，就不会再造屋\n谁此刻孤独，就会长久孤独" color"#ffffff" size 120 xalign 0.5 yalign 0.5
-            text "——赖内·马利亚·里尔克" color"#ffffff" size 80 xalign 1.0 
+            text "“向这狗娘养的世界，献上我全部的爱”" color"#ffffff" size 120 xalign 0.5 yalign 0.5
+            text "——《KiraKira煌煌舞台》" color"#ffffff" size 80 xalign 1.0 
 
 
 label start:
@@ -40,8 +41,10 @@ label start:
     hide screen start_sentence with Fade(1,0,0)
     $ quick_menu = True
 
-    call chapter01
+    call chapter01 from _call_chapter01
 
-    call chapter01_5
+    call chapter01_5 from _call_chapter01_5
 
-    call chapter2
+    call chapter02 from _call_chapter02
+
+    call chapter03 from _call_chapter03
