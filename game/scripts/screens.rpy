@@ -347,39 +347,97 @@ screen navigation():
 
         spacing gui.navigation_spacing
 
-        if main_menu:
+        # if main_menu:
 
-            textbutton _("开始") action Start()
+        #     textbutton _("开始") action Start()
 
-        else:
+        #     textbutton _("读取") action ShowMenu("load")
 
-            textbutton _("历史") action ShowMenu("history")
+        #     textbutton _("设置") action ShowMenu("preferences")
 
-            textbutton _("保存") action ShowMenu("save")
+        #     textbutton _("关于") action ShowMenu("about")
 
-        textbutton _("读取") action ShowMenu("load")
+        #     textbutton _("帮助") action ShowMenu("help")
 
-        textbutton _("设置") action ShowMenu("preferences")
+        #     textbutton _("退出") action Quit(confirm=not main_menu)
 
-        if _in_replay:
+        # else:
 
-            textbutton _("结束回放") action EndReplay(confirm=True)
+        null height 400
 
-        elif not main_menu:
+        imagebutton:
+            idle "gui/button/history_idle.png"
+            hover "gui/button/history_activated.png"
+            selected_idle "gui/button/history_activated.png"
+            action ShowMenu("history")
 
-            textbutton _("标题") action MainMenu()
+        if not main_menu:
+            imagebutton:
+                idle "gui/button/save_idle.png"
+                hover "gui/button/save_activated.png"
+                selected_idle "gui/button/save_activated.png"
+                action ShowMenu("save")
 
-        textbutton _("关于") action ShowMenu("about")
+        imagebutton:
+            idle "gui/button/load_idle.png"
+            hover "gui/button/load_activated.png"
+            selected_idle "gui/button/load_activated.png"
+            action ShowMenu("load")
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+        imagebutton:
+            idle "gui/button/preferences_idle.png"
+            hover "gui/button/preferences_activated.png"
+            selected_idle "gui/button/preferences_activated.png"
+            action ShowMenu("preferences")
 
-            ## “帮助”对移动设备来说并非必需或相关。
-            textbutton _("帮助") action ShowMenu("help")
+        if not main_menu:
+            imagebutton:
+                idle "gui/button/main_menu_idle.png"
+                hover "gui/button/main_menu_activated.png"
+                selected_idle "gui/button/main_menu_activated.png"
+                action MainMenu()
 
-        if renpy.variant("pc"):
+        imagebutton:
+            idle "gui/button/about_idle.png"
+            hover "gui/button/about_activated.png"
+            selected_idle "gui/button/about_activated.png"
+            action ShowMenu("about")
 
-            ## 退出按钮在 iOS 上是被禁止使用的，在安卓和网页上也不是必要的。
-            textbutton _("退出") action Quit(confirm=not main_menu)
+        imagebutton:
+            idle "gui/button/help_idle.png"
+            hover "gui/button/help_activated.png"
+            selected_idle "gui/button/help_activated.png"
+            action ShowMenu("help")
+
+        imagebutton:
+            idle "gui/button/quit_idle.png"
+            hover "gui/button/quit_activated.png"
+            selected_idle "gui/button/quit_activated.png"
+            action Quit(confirm=not main_menu)
+
+            # textbutton _("保存") action ShowMenu("save")
+
+
+
+        # if _in_replay:
+
+        #     textbutton _("结束回放") action EndReplay(confirm=True)
+
+        # elif not main_menu:
+
+        #     textbutton _("标题") action MainMenu()
+
+        
+
+        # if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+
+        #     ## “帮助”对移动设备来说并非必需或相关。
+        #     textbutton _("帮助") action ShowMenu("help")
+
+        # if renpy.variant("pc"):
+
+        #     ## 退出按钮在 iOS 上是被禁止使用的，在安卓和网页上也不是必要的。
+        #     textbutton _("退出") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -565,12 +623,18 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     use navigation
 
-    textbutton _("返回"):
-        style "return_button"
+    vbox:
+        xsize 390
+        ysize 190
+        xpos 0.869
+        ypos 0.02
+        anchor (0, 0)
+        imagebutton:
+            idle "gui/button/return_button.png"
+            hover "gui/button/return_button.png"
+            action Return()
 
-        action Return()
-
-    label title
+    # label title
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
@@ -590,8 +654,8 @@ style return_button is navigation_button
 style return_button_text is navigation_button_text
 
 style game_menu_outer_frame:
-    bottom_padding 90
-    top_padding 360
+    bottom_padding 0
+    top_padding 200
 
     background "gui/overlay/game_menu.png"
 
@@ -819,81 +883,117 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("设置"), scroll="viewport"):
+    use game_menu(_("设置"), scroll="vpgrid"):
 
         vbox:
+            xsize 2430
 
             hbox:
-                box_wrap True
+                xsize 2430
+                ysize 585
+                # box_wrap True
 
-                if renpy.variant("pc") or renpy.variant("web"):
-
-                    vbox:
-                        style_prefix "radio"
-                        label _("显示")
-                        textbutton _("窗口") action Preference("display", "window")
-                        textbutton _("全屏") action Preference("display", "fullscreen")
+                # if renpy.variant("pc") or renpy.variant("web"):
 
                 vbox:
-                    style_prefix "check"
-                    label _("快进")
-                    textbutton _("未读文本") action Preference("skip", "toggle")
-                    textbutton _("选项后继续") action Preference("after choices", "toggle")
-                    textbutton _("忽略转场") action InvertSelected(Preference("transitions", "toggle"))
+                    xsize 640
+                    ysize 585
+                    # style_prefix "radio"
+                    image "gui/preferencesui/display.png"
+
+                    imagebutton:
+                        idle "gui/preferencesui/window_idle.png"
+                        hover "gui/preferencesui/window_hover.png"
+                        action Preference("display", "window")
+
+                    imagebutton:
+                        idle "gui/preferencesui/fullscreen_idle.png"
+                        hover "gui/preferencesui/fullscreen_hover.png"
+                        action Preference("display", "fullscreen")
+
+                null width 500
+
+                vbox:
+                    xsize 1290
+                    ysize 585
+                    # style_prefix "check"
+                    image "gui/preferencesui/text.png"
+
+                    hbox:
+                        image "gui/preferencesui/text_speed.png"
+                        bar value Preference("text speed")
+
+                    hbox:
+                        image "gui/preferencesui/auto_forward_time.png"
+                        bar value Preference("auto-forward time")
 
                 ## 可在此处添加 radio_pref 或 check_pref 类型的额外 vbox，以添加
                 ## 额外的创建者定义的偏好设置。
 
-            null height (4 * gui.pref_spacing)
+            null height 200
 
             hbox:
+                xsize 2430
+                ysize 780
                 style_prefix "slider"
-                box_wrap True
+                # box_wrap True
 
                 vbox:
+                    xsize 640
+                    ysize 780
 
-                    label _("文字速度")
+                    image "gui/preferencesui/fast_forward.png"
 
-                    bar value Preference("text speed")
+                    imagebutton:
+                        idle "gui/preferencesui/skip_idle.png"
+                        hover "gui/preferencesui/skip_activated.png"
+                        selected_idle "gui/preferencesui/skip_activated.png"
+                        action Preference("skip", "toggle")
 
-                    label _("自动前进时间")
+                    imagebutton:
+                        idle "gui/preferencesui/after_choices_idle.png"
+                        hover "gui/preferencesui/after_choices_activated.png"
+                        selected_idle "gui/preferencesui/after_choices_activated.png"
+                        action Preference("after choices", "toggle")
 
-                    bar value Preference("auto-forward time")
+                    imagebutton:
+                        idle "gui/preferencesui/transitions_idle.png"
+                        hover "gui/preferencesui/transitions_activated.png"
+                        selected_idle "gui/preferencesui/transitions_activated.png"
+                        action InvertSelected(Preference("transitions", "toggle"))
+
+
+                null width 500
 
                 vbox:
+                    xsize 1290
+                    ysize 780
+                    image "gui/preferencesui/sound.png"
+                    hbox:
+                        image "gui/preferencesui/music_volume.png"
+                        bar value Preference("music volume")
+                    
+                    hbox:
+                        image "gui/preferencesui/sound_volume.png"
+                        bar value Preference("sound volume")
+                        # if config.sample_sound:
+                        #     textbutton _("测试") action Play("sound", config.sample_sound)
 
-                    if config.has_music:
-                        label _("音乐音量")
+                    imagebutton:
+                        idle "gui/preferencesui/mute_all_idle.png"
+                        hover "gui/preferencesui/mute_all_activated.png"
+                        selected_idle "gui/preferencesui/mute_all_activated.png"
+                        action Preference("all mute", "toggle")
 
-                        hbox:
-                            bar value Preference("music volume")
+                    # if config.has_voice:
+                    #     label _("语音音量")
 
-                    if config.has_sound:
-
-                        label _("音效音量")
-
-                        hbox:
-                            bar value Preference("sound volume")
-
-                            if config.sample_sound:
-                                textbutton _("测试") action Play("sound", config.sample_sound)
-
-
-                    if config.has_voice:
-                        label _("语音音量")
-
-                        hbox:
-                            bar value Preference("voice volume")
-
-                            if config.sample_voice:
-                                textbutton _("测试") action Play("voice", config.sample_voice)
-
-                    if config.has_music or config.has_sound or config.has_voice:
-                        null height gui.pref_spacing
-
-                        textbutton _("全部静音"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
+                    #     hbox:
+                    #         bar value Preference("voice volume")
+                    #         if config.sample_voice:
+                    #             textbutton _("测试") action Play("voice", config.sample_voice)
+                    # if config.has_music or config.has_sound or config.has_voice:
+                    # null height gui.pref_spacing
 
 
 style pref_label is gui_label

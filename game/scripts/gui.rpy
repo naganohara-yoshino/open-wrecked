@@ -252,7 +252,7 @@ define gui.notify_ypos = 135
 define gui.choice_spacing = 66
 
 ## 标题菜单和游戏菜单的导航部分中的按钮。
-define gui.navigation_spacing = 20
+define gui.navigation_spacing = 0
 
 ## 控制设置项目之间的间隔量。
 define gui.pref_spacing = 30
