@@ -302,17 +302,17 @@ define gui.frame_tile = False
 ## 水平条，滚动条和滑块的高度。垂直条，滚动条和滑块的宽度。
 define gui.bar_size = 75
 define gui.scrollbar_size = 36
-define gui.slider_size = 75
+define gui.slider_size = 190
 
 ## 若为 True，则条的底图平铺。若为 False，则条的底图线性缩放。
 define gui.bar_tile = False
 define gui.scrollbar_tile = False
-define gui.slider_tile = False
+define gui.slider_tile = True
 
 ## 水平边框。
 define gui.bar_borders = Borders(12, 12, 12, 12)
 define gui.scrollbar_borders = Borders(12, 12, 12, 12)
-define gui.slider_borders = Borders(12, 12, 12, 12)
+define gui.slider_borders = Borders(150, 0, 150, 0)
 
 ## 垂直边框。
 define gui.vbar_borders = Borders(12, 12, 12, 12)

@@ -886,10 +886,10 @@ screen preferences():
     use game_menu(_("设置"), scroll="vpgrid"):
 
         vbox:
-            xsize 2430
+            xsize 2640
 
             hbox:
-                xsize 2430
+                xsize 2640
                 ysize 585
                 # box_wrap True
 
@@ -914,18 +914,18 @@ screen preferences():
                 null width 500
 
                 vbox:
-                    xsize 1290
+                    xsize 1500
                     ysize 585
                     # style_prefix "check"
                     image "gui/preferencesui/text.png"
 
                     hbox:
                         image "gui/preferencesui/text_speed.png"
-                        bar value Preference("text speed")
+                        bar value Preference("text speed") left_gutter 72 right_gutter 72
 
                     hbox:
                         image "gui/preferencesui/auto_forward_time.png"
-                        bar value Preference("auto-forward time")
+                        bar value Preference("auto-forward time") left_gutter 72 right_gutter 72
 
                 ## 可在此处添加 radio_pref 或 check_pref 类型的额外 vbox，以添加
                 ## 额外的创建者定义的偏好设置。
@@ -933,7 +933,7 @@ screen preferences():
             null height 200
 
             hbox:
-                xsize 2430
+                xsize 2640
                 ysize 780
                 style_prefix "slider"
                 # box_wrap True
@@ -966,16 +966,16 @@ screen preferences():
                 null width 500
 
                 vbox:
-                    xsize 1290
+                    xsize 1500
                     ysize 780
                     image "gui/preferencesui/sound.png"
                     hbox:
                         image "gui/preferencesui/music_volume.png"
-                        bar value Preference("music volume")
+                        bar value Preference("music volume") left_gutter 72 right_gutter 72
                     
                     hbox:
                         image "gui/preferencesui/sound_volume.png"
-                        bar value Preference("sound volume")
+                        bar value Preference("sound volume") left_gutter 72 right_gutter 72
                         # if config.sample_sound:
                         #     textbutton _("测试") action Play("sound", config.sample_sound)
 
