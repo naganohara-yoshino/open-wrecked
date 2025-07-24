@@ -769,7 +769,6 @@ label chapter02:
     y"欸？"
     c"我现在、立刻、马上、必须带你回去！！！——"
     stop music fadeout 3
-    scene black with Dissolve(3)
     return
 
 

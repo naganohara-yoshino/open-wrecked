@@ -76,7 +76,7 @@ transform y_move_t:
 ## 左右动
 transform x_move_t:
     xoffset 0
-    linear 0.1 xoffset 20
+    linear 0.1 xoffset 40
     linear 0.1 xoffset 0
     repeat 2
 
