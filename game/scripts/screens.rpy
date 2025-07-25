@@ -363,7 +363,7 @@ screen navigation():
 
         # else:
 
-        null height 400
+        null height 300
 
         imagebutton:
             idle "gui/button/history_idle.png"
@@ -630,8 +630,8 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
         ypos 0.02
         anchor (0, 0)
         imagebutton:
-            idle "gui/button/return_button.png"
-            hover "gui/button/return_button.png"
+            idle "gui/button/return_idle.png"
+            hover "gui/button/return_activated.png"
             action Return()
 
     # label title

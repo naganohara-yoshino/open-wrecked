@@ -1,9 +1,9 @@
 label chapter03:
     scene black with Dissolve(1)
     with Pause(1)
-    scene zc1 with Fade(1.5,0.5,1.5,color = "#ffffff")
+    scene zc1 with Fade(1,0.5,1.5,color = "#ffffff")
     with Pause(3)
-    scene 16_shokudou with Fade(2,0,3,color="#ffffff")
+    scene 16_shokudou with Fade(1.5,2,1)
     with Pause(1)
     play music "audio/Calm/UniversityLife.mp3" fadein 3
     c"啊，人这么少吗……" with Dissolve(1)
