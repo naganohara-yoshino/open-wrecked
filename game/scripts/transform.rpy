@@ -39,12 +39,15 @@ transform move_left_t:
 
 ## 向右移动
 transform move_right_t:
-    alpha 0.0
-    xpos -50
     parallel:
         easein_quart 1.0 alpha 1.0
     parallel:
-        easein_quart 1.0 xpos 0
+        easein_quart 1.0 xpos 1300
+    parallel:
+        yoffset 0
+        linear 0.2 yoffset 40
+        linear 0.2 yoffset 0
+        repeat 2
 
 ## 背景模糊
 transform bg_blur_t:
@@ -69,8 +72,8 @@ transform zoom_out_t:
 ## 上下动
 transform y_move_t:
     yoffset 0
-    linear 0.3 yoffset 10
-    linear 0.3 yoffset 0
+    linear 0.1 yoffset 40
+    linear 0.1 yoffset 0
     repeat 2
 
 ## 左右动

@@ -801,7 +801,6 @@ screen file_slots(title):
                             style "slot_name_text"
 
                         key "save_delete" action FileDelete(slot)
-
             ## 用于访问其他页面的按钮。
             vbox:
                 style_prefix "page"
