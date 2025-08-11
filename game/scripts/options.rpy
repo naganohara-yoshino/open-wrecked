@@ -36,6 +36,7 @@ define gui.about = _p("""
 
 define build.name = "Wrecked"
 
+define debugger = True
 
 ## 音效和音乐 #######################################################################
 

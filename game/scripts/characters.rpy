@@ -10,7 +10,6 @@ image sw_face:
     yanchor 0.1
     ypos 880
     zoom 3
-
 ## 萨瓦-冬-轻佻
 image sw_winter_giddy:
     "images/LH/sw_winter_giddy.png"
@@ -49,6 +48,13 @@ image sw_winter_wrecked:
 ## 萨瓦-冬-微笑
 image sw_winter_smile:
     "images/LH/sw_winter_smile.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+
+## 萨瓦-冬-吃惊
+image sw_winter_surprised:
+    "images/LH/sw_winter_surprised.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
@@ -163,3 +169,78 @@ image ym_winter_cold:
     yanchor 0.47
     ypos 2160
     zoom 0.95
+
+layeredimage sw:
+    image_format 'images/LH/{image}.png'
+    at transform:
+        xanchor 0.5
+        yanchor 0.47
+        ypos 2160
+    group expressions:
+        attribute giddy:
+            'sw_winter_giddy'
+        attribute calm:
+            'sw_winter_calm'
+        attribute insidious:
+            'sw_winter_insidious'
+        attribute surprised:
+            'sw_winter_surprised'
+        attribute wrecked:
+            'sw_winter_wrecked'
+        attribute smile:
+            'sw_winter_smile'
+        attribute shock:
+            'sw_winter_shock'
+        attribute angry:
+            'sw_winter_angry'
+        attribute frivolous:
+            'sw_winter_frivolous'
+layeredimage cy:
+    image_format 'images/LH/{image}.png'
+    at transform:
+        xanchor 0.5
+        yanchor 0.47
+        ypos 2160
+    group expressions:
+        attribute angry:
+            'cy_winter_angry'
+        attribute calm:
+            'cy_winter_calm'
+        attribute cold:
+            'cy_winter_cold'
+        attribute fluster:
+            'cy_winter_fluster'
+        attribute happy:
+            'cy_winter_happy'
+        attribute lookdown:
+            'cy_winter_lookdown'
+        attribute sign:
+            'cy_winter_sign'
+        attribute smile:
+            'cy_winter_smile'
+        attribute smile_2:
+            'cy_winter_smile_2'
+        attribute tearout:
+            'cy_winter_tearout'
+layeredimage ym:
+    image_format 'images/LH/ym_winter_{image}.png'
+    at transform:
+        xanchor 0.5
+        yanchor 0.47
+        ypos 2160
+        zoom 0.95
+    group expressions:
+        attribute cold:
+            'cold'
+        attribute happy:
+            'happy'
+        attribute kind:
+            'kind'
+        attribute smile:
+            'smile'
+        attribute ting:
+            'ting'
+        attribute ting_2:
+            'ting_2'
+        attribute sad:
+            'sad'
