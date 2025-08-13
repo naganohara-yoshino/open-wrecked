@@ -4,7 +4,7 @@ label debugger_menu:
         '第一章':
             jump chapter01
         '第二章':
-            jump chapter2
+            jump chapter02
         '快速跳转':
             jump jumper
 
