@@ -28,6 +28,7 @@ log.txt
 errors.txt
 traceback.txt
 files.txt
+*.bak
 
 
 # Vscode Renpy Extension #
@@ -36,7 +37,7 @@ renpy_warp_*.rpe.py
 
 
 ### VisualStudioCode ###
-.vscode/*
+**/.vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
