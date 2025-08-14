@@ -1345,22 +1345,37 @@ screen confirm(message, yes_action, no_action):
     add "gui/overlay/confirm.png"
 
     frame:
+        padding (200,200)
+        background Frame("gui/window/base.png",300,300,300,300)
 
         vbox:
             xalign .5
             yalign .5
             spacing 90
+            hbox:
+                image "gui/window/confirm_icon.png"
 
-            label _(message):
-                style "confirm_prompt"
-                xalign 0.5
+                null width 150
+
+                text "[message!tq]":
+                    style "confirm_prompt_text"
+                    xalign 0.5
+                    yalign 0.5
 
             hbox:
                 xalign 0.5
-                spacing 300
 
-                textbutton _("确定") action yes_action
-                textbutton _("取消") action no_action
+                imagebutton:
+                    idle "gui/window/yes_idle.png"
+                    hover "gui/window/yes_hover.png"
+                    action yes_action
+
+                null width 180
+
+                imagebutton:
+                    idle "gui/window/no_idle.png"
+                    hover "gui/window/no_hover.png"
+                    action no_action        
 
     ## 右键点击退出并答复 no（取消）。
     key "game_menu" action no_action
@@ -1379,6 +1394,8 @@ style confirm_frame:
     yalign .5
 
 style confirm_prompt_text:
+    font "fonts/MarukoGothicCJKsc-Medium.ttf"
+    color "#434445"
     textalign 0.5
     layout "subtitle"
 
