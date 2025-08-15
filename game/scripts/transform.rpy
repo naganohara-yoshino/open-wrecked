@@ -1,6 +1,7 @@
 ############### 转场的一些预定义 ###############
 
 define dissolve_1 = Dissolve(1.0)
+define fade1 = Fade(1.0,3.0,1.0)
 
 ## 可以控制的震动 下面是两个官方的例子
 ## (0, 10), (0, -10) 是移动幅度，改数字可以增加幅度。
@@ -113,6 +114,13 @@ transform black_white_t:
 ## 染色
 transform coloriz_t:
     linear 1.0 matrixcolor ColorizeMatrix("#a46565", "#2034e9")
+
+transform _left:
+    xpos 1000
+
+transform _right:
+    xpos 3840-1000
+
 
 ############### 使用指南 ###############
 

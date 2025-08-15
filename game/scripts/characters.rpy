@@ -187,6 +187,8 @@ layeredimage sw:
             'sw_winter_surprised'
         attribute wrecked:
             'sw_winter_wrecked'
+        attribute wrecked2:
+            'sw_winter_wrecked2'
         attribute smile:
             'sw_winter_smile'
         attribute shock:
@@ -195,6 +197,10 @@ layeredimage sw:
             'sw_winter_angry'
         attribute frivolous:
             'sw_winter_frivolous'
+        attribute brave:
+            'sw_winter_brave'
+        attribute annoying:
+            'sw_winter_annoying'
 layeredimage cy:
     image_format 'images/LH/{image}.png'
     at transform:
@@ -204,6 +210,8 @@ layeredimage cy:
     group expressions:
         attribute angry:
             'cy_winter_angry'
+        attribute annoying:
+            'cy_winter_annoying'
         attribute calm:
             'cy_winter_calm'
         attribute cold:
@@ -214,6 +222,8 @@ layeredimage cy:
             'cy_winter_happy'
         attribute lookdown:
             'cy_winter_lookdown'
+        attribute speechless:
+            'cy_winter_speechless'
         attribute sign:
             'cy_winter_sign'
         attribute smile:
@@ -222,6 +232,10 @@ layeredimage cy:
             'cy_winter_smile_2'
         attribute tearout:
             'cy_winter_tearout'
+        attribute angry_smile:
+            'cy_winter_angry_smile'
+        attribute worried:
+            'cy_winter_worried'
 layeredimage ym:
     image_format 'images/LH/ym_winter_{image}.png'
     at transform:

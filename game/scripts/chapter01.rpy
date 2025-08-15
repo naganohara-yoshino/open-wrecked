@@ -1,14 +1,15 @@
 label chapter01:
     play music "audio/Calm/CalmEmotion.mp3"
     $ quick_menu = True
-    "下了雪的街道，走起来总是比以往更加漫长" with Dissolve(2)
+    "下了雪的街道，走起来总是比以往更加漫长" with Dissolve(0.2)
     "雪在地上积了厚厚的一层，坑坑洼洼，在路灯下显得斑驳
     陆离，随着着车道延伸到远方，像一条银鳞的蛇钻回了阴
     暗处的窝"
     c"好冷……"
+    pause 1.0
     scene 1_street_with_snow at bg_blur_t 
-    with Pause(1)
-    "从什么时候开始的呢，这座城市里的人不再为大雪天感到欣喜了" with Dissolve(2)
+    with Dissolve(2.0)
+    "从什么时候开始的呢，这座城市里的人不再为大雪天感到欣喜了" with Dissolve(0.2)
     """
 
     据说第一年下大雪的时候，还有人兴奋地在雪地里裸奔呢

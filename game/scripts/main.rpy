@@ -1,10 +1,10 @@
 ## 人名的命名逻辑就是取首字母
-define c = Character("潮鸢")
-define y = Character("玉米")
-define s = Character("萨瓦")
-define b = Character("白楽")
-define sn = Character("少女")
-define bn = Character("白发少女")
+define c = Character("潮鸢")#,what_prefix='『',what_suffix='』')
+define y = Character("玉米")#,what_prefix='『',what_suffix='』')
+define s = Character("萨瓦")#,what_prefix='『',what_suffix='』')
+define b = Character("白楽")#,what_prefix='『',what_suffix='』')
+define sn = Character("少女")#,what_prefix='『',what_suffix='』')
+define bn = Character("白发少女")#,what_prefix='『',what_suffix='』')
 
 ## 启动动画
 image splash = "splash.png"
@@ -21,6 +21,7 @@ screen start_sentence:
     frame:
         xsize 3840
         ysize 2160
+        background Null()
         vbox:
             xalign 0.5
             yalign 0.5
@@ -50,3 +51,6 @@ label start:
     call chapter02 from _call_chapter02
 
     call chapter03 from _call_chapter03
+    call chapter04 from _call_chapter04
+    
+    #call chapter05 from _call_chapter05

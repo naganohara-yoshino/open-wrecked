@@ -2,9 +2,7 @@ label debugger_menu:
     '测试菜单'
     menu:
         '第一章':
-            jump chapter01
-        '第二章':
-            jump chapter02
+            return
         '快速跳转':
             jump jumper
 
