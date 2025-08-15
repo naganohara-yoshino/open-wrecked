@@ -43,19 +43,24 @@ label chapter04:
     s "哎呀，这是开场白啦开场白，怎么样，帅吧"
 
     show cy sign
+    with dissolve
     c "不就是来这里聊天而已，被你搞得像什么秘密会议一样"
     show cy smile
+    with dissolve
     c '萨瓦小姐您今年贵庚，还这么中二呐'
 
     show sw angry
+    with dissolve
     s "你这人忒不解风情了，汝便是如此看待我等生存战略吗！"
     s '我们何止是什么秘密会议，这是关乎生死存亡的作战计划好不好！ '
 
     show cy angry_smile
+    with dissolve
     c "好好好，是是是，是您的伟大作战计划"
     c '玩够了吧，也该谈正事了 '
 
     show sw brave
+    with dissolve
     s "Yes, sir！"with hpunch
 
     c "怎么我又成“sir”了，指挥官不是你吗"
@@ -85,6 +90,7 @@ label chapter04:
     s "我们还是得想个办法组乐队"
 
     show cy worried
+    with dissolve
     c "这些话我也知道说，但是钱怎么办"
     c "难道你有钱帮她吗？"
 
@@ -98,23 +104,27 @@ label chapter04:
     c "这对于她而言也是平添一个负担啊......"
 
     show sw angry
+    with dissolve
     s "这怎么行！" with hpunch
     s "钱还能再挣，错失了人就永远没有机会了啊"
 
     show sw annoying
     show cy cold
+    with dissolve
     c "是，错失了玉米确实很可惜，但是也没必要一棍子打死吧"
     c "就算一定要组乐队的话，还有很多机会的呀"
     c "后朋群、我们学校的社团，绝对还有很多高手的"
     c "你有一点基础，发一个找贝斯手的帖子，肯定很快能找到搭档的啊"
 
     show sw angry
+    with dissolve
     s "不行不行，这也太随便了，乐队可是“命运共同体”啊！"
     s "照你的说法，随便拉个路人甲也能成，但这种乌合之众有什么意义哦"
     s "总之，乐队要组，人也只能是玉米，办法再想"
 
     show sw annoying
     show cy sign
+    with dissolve
     c "究竟是谁随便啊……你就只会轻轻提个要求，也不管能不能实现"
     c "老说什么会有办法办法再想，但是哪有什么办法啊......"
     c "只有架起锅子煮白米，没有架起锅子煮道理"
@@ -130,42 +140,52 @@ label chapter04:
     s "咱们凑点钱买个送给玉米不就行了，多简单的事！"
 
     show cy speechless
+    with dissolve
     c "不是……你不才说地主家没有余粮吗"
     c "你连自己的生活费都需要靠打工挣钱才能勉强满足"
     c "难道指望天上掉钱下来吗......"
 
     show sw brave
+    with dissolve
     s "啊，你理解错啦，生活费其实还是够的"
     s "打工只是用来额外消费的，少喝点酒少买两件衣服就腾出来了"
 
     show cy lookdown
+    with dissolve
     c "……一个一大早就在喝的酒鬼是怎么好意思说出这话的"
 
     s "哎呀，你就相信我一回嘛，我保证这半个月戒酒了"
     s "我保证，这是戒酒前的最后一杯！"
 
     show cy angry_smile
+    with dissolve
     c "“醉后一杯”，喝醉的醉是吧"
 
     show sw calm
+    with dissolve
     s "不和你扯皮"
     show sw giddy
+    with dissolve
     s "俗话说要开源节流，节流之外开源的想法我也想好了"
     s "我不是在咖啡店打工嘛，已经联系过店长了，可以靠加班再多赚点钱"
     s "而且你不是还闲着么，去做做家教或者什么的赚点零钱不难的！"
 
     show cy annoying
+    with dissolve
     c "真无语了，你还真是想一出做一出啊……"
     c "家教之类的哪里是想找就找啊"
 
     show sw calm
+    with dissolve
     s "那还能怎么办？乐队要搞，人也必须是玉米，还能怎么办？"
     show sw angry
+    with dissolve
     s "你说我想一出是一出，那你呢，你想过什么办法吗？"
     s "按我们现在这样，也只能是“想一出是一出了” 啊"
     s "这种时候还是少说点泄气话吧"
 
     show sw annoying
+    with dissolve
     c "你生气我还生气呢。我早就说过了我的办法了——"
     c "找机会让你们双方互相道歉，和平解决这件事，两全其美"
     c "再说，为什么一定就要组乐队呢，为什么一定就非是玉米不可呢，任性也要有个度吧"
@@ -194,8 +214,10 @@ label chapter04:
     "深呼吸并克制住情绪后，我用温柔的声音安慰萨瓦道"
     
     show cy sign
+    with dissolve
     c "呐，萨瓦，我们不吵了好吗"
     show cy calm
+    with dissolve
     c "我明白你的心情，但是你也得体谅我们的处境啊。你先听我说好不好"
     c "你就说过几天是你的生日，约出来请玉米吃饭，卖她一个人情"
     c "你和玉米互相道个歉，KTV这件事就算过去了"
@@ -288,6 +310,7 @@ label chapter04:
 
     stop music fadeout 2.0
     show cy sign
+    with dissolve
     c "我知道了……总之，我会想办法的……"
     c "唉，我确实太虚伪了，虚伪、自私自利而不知。对不起，真的对不起......"
     c "但是我仍然要说，我也是真心的想要和你们做好朋友的！一点都不比萨瓦的假哦......"
@@ -296,46 +319,58 @@ label chapter04:
 
     play music "audio/Happy/调侃的小曲.mp3"  fadeout 1.0
     show sw giddy
+    with dissolve
     s "好耶！最喜欢潮鸢了"
 
     "萨瓦立刻破涕而笑"
 
     show cy speechless
+    with dissolve
     c "喂！刚刚还那么凶，现在怎么就这么开心了"
     show cy sign
+    with dissolve
     c "刚刚可把我吓得不浅啊"
 
     show sw wrecked
+    with dissolve
     s "哎呀人家喝醉了嘛～潮鸢大人不计小人过好不好"
     s "那就这么决定了，生存战略，展开！——"
 
     show cy fluster
+    with dissolve
     c "刚刚就想问了，“shēng cún zhàn lüè”到底是什么……？什么鬼名字"
 
     show sw brave
+    with dissolve
     s "这是我们作战计划的代号，作战计划肯定都要中二一点啦！"
     s "有句话怎么说来着，命运女神宠爱中二的小孩嘛 "
     s "再说了，这可是关乎我们乐队生存的关键一搏！那可不就是“生存”战略 "
     s "还是那句话，越成熟越幼稚，越幼稚，越成熟！ "
 
     show cy angry_smile
+    with dissolve
     c "好好好，服了你还不行吗，生存战略就生存战略吧"
 
     show sw wrecked
+    with dissolve
     s "嘿嘿，实名表白通情达理、美貌绝伦、还有什么来着……的潮鸢大人！"
 
     show cy speechless
+    with dissolve
     c "（嫌弃地看着萨瓦）"
     show cy happy
+    with dissolve
     c '好了好了，既然是这样，还是讨论一些作战的细节吧 '
     c '你有想过给玉米买什么琴吗？  '
 
     show sw surprised
     show cy calm
+    with dissolve
     s "啊，这还真的没想过。贝斯那边俺也不懂啊"
 
     show cy happy
     show sw calm
+    with dissolve
     c '''
     那只能用最简单粗暴的方式喽，先确定一个价位吧 
     有了价位之后，再去音乐群这种大佬云集的地方问问就好了 
@@ -346,6 +381,7 @@ label chapter04:
     '''
 
     show sw surprised
+    with dissolve
     s "卧槽，两千？！" with hpunch
     s "我一开始想的是一千五，还觉得多了 "
 
@@ -366,6 +402,7 @@ label chapter04:
     c "如果有多的话，就给我也买一把好了"
 
     show sw wrecked
+    with dissolve
     s "Yes, sir!"
 
     "醉醺醺的萨瓦，脸红的好像是酒精在燃烧一样"
