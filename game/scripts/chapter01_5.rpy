@@ -1,7 +1,9 @@
 label chapter01_5:
     $ quick_menu = False
-    scene transition1 with Fade(2,2,2)
-    with Pause(2)
+    scene black with Dissolve(1)
+    with Pause(1)
+    scene zc1 with Fade(1,0.5,1.5,color = "#ffffff")
+    with Pause(3)
     scene black with Fade(2,2,0)
     screen dream:
         frame:
@@ -16,7 +18,7 @@ label chapter01_5:
     with Pause(3)
     hide screen dream with Fade(1,0,0)
     show 8_street with Fade(0,0,2)
-    play music "audio/Sad/Seabed.ogg" fadein 4
+    play music "audio/Sad/07.ogg" fadein 4
     $ quick_menu = True
     "“已经入秋了啊——”" with Dissolve(1)
     """

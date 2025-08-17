@@ -1,112 +1,106 @@
 label chapter04:
+    stop music fadeout 2
     scene black with Dissolve(1)
-    pause 5.0
-    scene 6_cafebar
-    show sw angry
-    with Fade(1.5,2,1)
     with Pause(1)
-    s "终于还是到了生存战略的时候了吗！"with hpunch
-    scene black with Dissolve(0.4)
-    "本以为一切都是水到渠成，没想到是如此的急不可待"
+    scene zc1 with Fade(1,0.5,1.5,color = "#ffffff")
+    with Pause(3)
+    scene 6_cafebar with Fade(1.5,2,1)
+    with Pause(1)
+    show sw_winter_angry with Pause(1)
+    s"终于还是到了生存战略的时候了吗！"with hpunch
+    s"""
+    本以为一切都是水到渠成，没想到是如此的急不可待
 
-    "本以为命运早已抛弃我们，没想到是犹抱琵琶半遮面"
+    本以为命运早已抛弃我们，没想到是犹抱琵琶半遮面
 
-    "命运之女神，正邀请我们前往不可预知的鸿门晚宴，而失败的人——"
+    命运之女神，正邀请我们前往不可预知的鸿门晚宴，而失败的人——
 
-    "将失去 整 个 世 界 ——"
+    将失去 整 个 世 界 ——
+    """
+    play music "audio/Impression/Sawa.mp3" fadein 2.0
+    hide sw_winter_angry with dissolve
+    """
+    KTV事件之后星期六的上午，萨瓦约我到学校附近的“利维坦”咖啡厅见面
 
-    play music "audio/Impression/Sawa.mp3" fadein 2.0  fadeout 1.0
-    scene 6_cafebar with Dissolve(0.5)
-    "KTV事件之后星期六的上午，萨瓦约我到学校附近的“利维坦”咖啡厅见面"
+    说是说要商量要紧的事情，结果我到之前她已经喝起来了
 
-    "说是说要商量要紧的事情，结果我到之前她已经喝起来了"
+    凑近一闻就是一股酒气，大早上就喝酒对身体不好吧……
 
-    "凑近一闻就是一股酒气，大早上就喝酒对身体不好吧......"
+    呃，我怀疑这个人根本没有清醒的时候
 
-    "呃，我怀疑这个人根本没有清醒的时候"
-    '（萨瓦看见我，也不先问点正经事，而是冥思苦想了一会） '
-    '（于是就憋出了开头这一段中二至极的发言） '
-    '（但历经了萨瓦每日高强度发癫的我已经见怪不怪了） '
-    '（所以这算是被调教好了吗......？） '
+    萨瓦看见我，也不先问点正经事，而是冥思苦想了一会
+    
+    于是就憋出了开头这一段中二至极的发言
+    
+    但历经了萨瓦每日高强度发癫的我已经见怪不怪了
 
-    show sw giddy:
+    所以这算是被调教好了吗……？
+    """
+    show sw_winter_giddy:
         xpos 1000
-    show cy lookdown:
-        xpos 3840-1000
-    with Dissolve(1.0)   
-    c "所以这又是闹哪一出……？"
+    with dissolve
 
+    show cy_winter_lookdown:
+        xpos 3840-1000
+    with dissolve
+    c"所以这又是闹哪一出……？"
     #一个预定的表情
     #show sw happy:
         #xpos 1000
     #with Dissolve(0.2)
-    s "哎呀，这是开场白啦开场白，怎么样，帅吧"
-
-    show cy sign
+    s"哎呀，这是开场白啦开场白，怎么样，帅吧"
+    hide cy_winter_lookdown
+    show cy_winter_sign:
+        xpos 2840
     with dissolve
-    c "不就是来这里聊天而已，被你搞得像什么秘密会议一样"
-    show cy smile
+    c"不就是来这里聊天而已，被你搞得像什么秘密会议一样"
+    c"萨瓦小姐您今年贵庚，还这么中二呐"
+    s"你这人忒不解风情了，汝便是如此看待我等生存战略吗！"
+    s"我们何止是什么秘密会议，这是关乎生死存亡的作战计划好不好！"
+    c"好好好，是是是，是您的伟大作战计划"
+    c"玩够了吧，也该谈正事了"
+    s"Yes, sir！"
+    hide cy_winter_sign
+    show cy_winter_lookdown:
+        xpos 2840
     with dissolve
-    c '萨瓦小姐您今年贵庚，还这么中二呐'
+    c"怎么我又成“sir”了，指挥官不是你吗"
+    c"真搞不清你这个电波女……"
+    hide sw_winter_giddy with dissolve
+    hide cy_winter_lookdown with dissolve
+    """
+    来之前我已经将玉米的自述概括了一番，委婉地告诉了萨瓦
 
-    show sw angry
-    with dissolve
-    s "你这人忒不解风情了，汝便是如此看待我等生存战略吗！"
-    s '我们何止是什么秘密会议，这是关乎生死存亡的作战计划好不好！ '
+    萨瓦又进一步和我讨论了其中的细节
 
-    show cy angry_smile
-    with dissolve
-    c "好好好，是是是，是您的伟大作战计划"
-    c '玩够了吧，也该谈正事了 '
+    她也非常后悔没有早点意识到玉米贫困的处境
 
-    show sw brave
-    with dissolve
-    s "Yes, sir！"with hpunch
+    和我不同的是，她没有半分地气馁，而是积极地思考着对策
 
-    c "怎么我又成“sir”了，指挥官不是你吗"
-    c "真搞不清你这个电波女......"
+    虽然并不想泼萨瓦的冷水，但看着没有半分忧患的萨瓦，我还是想说
 
-    hide cy
-    hide sw
-    with Dissolve(1.0)
-    "(来之前我已经将玉米的自述概括了一番，委婉地告诉了萨瓦)"
-
-    "(萨瓦又进一步和我讨论了其中的细节"
-
-    "她也非常后悔没有早点意识到玉米贫困的处境"
-
-    "和我不同的是，她没有半分地气馁，而是积极地思考着对策"
-
-    "虽然并不想泼萨瓦的冷水，但看着没有半分忧患的萨瓦，我还是想说"
-
-    "这种中二的“自信”真的有什么用吗......？"
-
-    show sw insidious:
-        xpos 1000
-    show cy cold:
-        xpos 3840-1000
-    with Dissolve(0.45)   
-    s "肯定是不能放着玉米不管的……"
-    s "我们还是得想个办法组乐队"
-
-    show cy worried
-    with dissolve
-    c "这些话我也知道说，但是钱怎么办"
-    c "难道你有钱帮她吗？"
-
-    s "地主家也没有余粮啊"
-    s "平日里大手大脚惯了，这个时候也拿不出什么积蓄来"
-
-    c "那不就没办法了嘛"
-    c "我觉得如果还想组乐队的话，只能放弃邀请玉米了"
-    c "那样太不现实了"
-    c "而且就算强行邀请玉米入伙，她能负担起各种开销吗？"
-    c "这对于她而言也是平添一个负担啊......"
-
-    show sw angry
-    with dissolve
-    s "这怎么行！" with hpunch
-    s "钱还能再挣，错失了人就永远没有机会了啊"
+    这种中二的“自信”真的有什么用吗……？
+    """
+    s"肯定是不能放着玉米不管的……"
+    s"我们还是得想个办法组乐队"
+    c"这些话我也知道说，但是钱怎么办"
+    c"难道你有钱帮她吗？"
+    s"地主家也没有余粮啊"
+    s"平日里大手大脚惯了，这个时候也拿不出什么积蓄来"
+    c"""
+    那不就没办法了嘛
+    
+    我觉得如果还想组乐队的话，只能放弃邀请玉米了
+    
+    那样太不现实了
+    
+    而且就算强行邀请玉米入伙，她能负担起各种开销吗？
+    
+    这对于她而言也是平添一个负担啊……
+    """
+    stop music fadeout 4
+    s"这怎么行！" with hpunch
+    s"钱还能再挣，错失了人就永远没有机会了啊"
 
     show sw annoying
     show cy cold
