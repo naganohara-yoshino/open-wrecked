@@ -1,7 +1,7 @@
 label chapter02:
     stop music fadeout 4
     scene black with Fade(2,2,0)
-    play music "audio/Impression/Carnelian.mp3" fadein 4
+    play music "audio/Impression/08.mp3" fadein 4
     "凌晨三点，我踏破无边的雪地，从床上醒来" with Dissolve(1)
     """
     又是那个梦境吗……
@@ -32,7 +32,7 @@ label chapter02:
     
     我也没放在心上，随便应和了几句便走了
     """
-    scene 1_street_with_snow with Fade(1,1,0)
+    scene 1_street_with_snow with Fade(1,1,1)
     "然而过了几天就骤然降温了" with Dissolve(1)
     """
     本以为是照常的秋雨，可是竟然飘下了鹅毛大雪
@@ -63,7 +63,7 @@ label chapter02:
     """
     stop music fadeout 4
     scene black with Fade(2,2,0)
-    play music "audio/Calm/UniversityLife.mp3"
+    play music "audio/Calm/03.mp3"
     "醒来之后心情也不好，莫名有些心事重重" with Dissolve(1)
     """
     我叹了口气，放弃了复杂的思考
@@ -108,23 +108,29 @@ label chapter02:
     window show
     
     """
-    这个叫“玉米”的网友也是在后朋群认识的
+    这个叫“玉米”的网友也是在主朋群认识的
 
-    就是萨瓦提过的那个，“台风眼后朋克同好会”
+    就是萨瓦提过的那个，“台风眼主朋克同好会”
 
     这是嘉城大学的校级群聊，群主是我的表姐，我靠着这层“裙带关系”混了个管理，也因此认识了玉米
 
-    她和我一样大一，今年才接触后朋
+    她和我一样大一，今年才接触主朋
 
     虽然接触没多久，但已经是个写文章做视频的大佬了
 
-    上个月开始她开始制作后朋克相关的赏析视频。虽然制作方面粗糙了点，但是文笔很好，观点也很深刻
+    上个月开始她开始制作主朋克相关的赏析视频。虽然制作方面粗糙了点，但是文笔很好，观点也很深刻
 
     视频发在群里之后很受欢迎，就连群里的老人们也都很欣赏
+    
+    虽然是新人，玉米却已经是整个音乐区最后的主朋克up了——
+    
+    知名的乐队大多解散，留在圈子里的也几乎都是半死不活的排外老人或者到处乱刷的时尚小鬼）
+    
+    视频做出来大受欢迎，给整个圈子都带来了一定的热度
+    
+    大伙说玉米是最后的希望，她也就把这个系列做了下去，目前两周一更很是勤奋
 
-    她也就把这个系列做了下去，目前两周一更很是勤奋
-
-    才入坑半年就当上后朋区up主了，要不怎么说我们群里卧虎藏龙呢
+    才入坑半年就当上主朋区up主了，要不怎么说我们群里卧虎藏龙呢
 
     每次看她的视频都会感慨，会写文就是好啊
 
@@ -146,7 +152,7 @@ label chapter02:
 
     看样子她似乎写稿很不顺利呢，说些什么好呢
 
-    这么晚了说太多也不太好，安慰她几句吧
+    这么晚了说太多也不好，安慰她几句吧
     """
     python:
         yumi_chat_2 = [
@@ -163,8 +169,8 @@ label chapter02:
             {"name": " ", "content": "哈哈哈哈，“怀民亦未寝”啊，要不要“相与步于中庭” ?", "avatar": "gui/avater/Chara/yumi.png"},
             {"name": " ", "content": "我超，死去的高中默写还在追我", "avatar": "gui/avater/Chara/chaoyuan.png", "from_myself":"True"},
             {"name": " ", "content": "这个点有啥好逛的", "avatar": "gui/avater/Chara/chaoyuan.png", "from_myself":"True"},
-            {"name": " ", "content": "哼哼，这就是不解风情了，这可是后朋乐迷最爱的深夜啊！不觉得很浪漫吗？", "avatar": "gui/avater/Chara/yumi.png"},
-            {"name": " ", "content": "后朋批收收味啊😴", "avatar": "gui/avater/Chara/chaoyuan.png", "from_myself":"True"},
+            {"name": " ", "content": "哼哼，这就是不解风情了，这可是主朋乐迷最爱的深夜啊！不觉得很浪漫吗？", "avatar": "gui/avater/Chara/yumi.png"},
+            {"name": " ", "content": "主朋批收收味啊😴", "avatar": "gui/avater/Chara/chaoyuan.png", "from_myself":"True"},
             {"name": " ", "content": "这么大半夜出去哪有什么风情", "avatar": "gui/avater/Chara/chaoyuan.png", "from_myself":"True"},
             {"name": " ", "content": "话说“哼哼”这语调跟谁学的，我家玉米怎么也杂鱼起来了", "avatar": "gui/avater/Chara/chaoyuan.png", "from_myself":"True"},
             {"name": " ", "content": "杂鱼是什么，玉米就不能哼哼吗？", "avatar": "gui/avater/Chara/yumi.png"},
@@ -193,7 +199,7 @@ label chapter02:
 
     但我竟然毫无愧疚感，毕竟这种深夜聊天的缘分实在是太稀奇了
 
-    人类就是这样，如果有人熬的和你一样晚的话，熬夜的罪恶感就会大大减轻
+    人类就是这样，如果有人熬得和你一样晚的话，熬夜的罪恶感就会大大减轻
 
     以至于我在玉米的怂恿下，甚至都想在这个点出去逛逛了
 
@@ -215,17 +221,15 @@ label chapter02:
 
     相比之下，面基甚至是有组织的“团伙”犯罪呢
 
-    怎么回事，越想越激动了
-
-    一旦有个人能陪着你发疯，简直就像是烟瘾的时候正好有人借火一样
+    怎么回事，越想越激动了，就像是烟瘾的时候正好有人借火一样
 
     我问了问玉米要不要面基，她爽快地答应了
 
     不过玉米拒绝了我的提议，说是去一个我这种夜游狂人也不知道的地方
 
-    而且她还说，既然是后朋迷面基，肯定要趁机品鉴一下“后朋风情”
+    而且她还说，既然是主朋迷面基，肯定要趁机品鉴一下“主朋风情”
 
-    “有后朋风情的地方”吗？……好稀有的形容
+    “有主朋风情的地方”吗？……好稀有的形容
 
     怎么办，真的要在这个点出去吗
 
@@ -245,16 +249,16 @@ label chapter02:
     """
     stop music fadeout 4
     scene 11_nightroad with Fade(2,2,2)
-    play music "audio/Nervous/SilentMalice.mp3"
+    play music "audio/Nervous/02.mp3"
     "晴朗的夜晚，没有积雪的城市看起来更加瘦骨嶙峋了" with Dissolve(1)
     """
-    耳边窸窸碎碎的声音，像是饥饿的城市用肚子发出的抗议。我忍耐着这冬日的牢骚，灰溜溜地在它的生锈的胃肠里穿梭
+    耳边窸窸碎碎的声音，像是饥饿的城市用肚子发出的抗议
+    
+    我忍耐着这冬日的牢骚，灰溜溜地在它的生锈的胃肠里穿梭
 
     冬风比想象中的还要冷，摆着皇帝的仪仗似的，大摇大摆地在街上闯过
 
-    忘了戴围巾的我哆哆嗦嗦地走着，佝偻着好像在给皇帝行礼
-
-    唉，出来的还是太匆忙了
+    忘了戴围巾的我哆哆嗦嗦地走着，唉，出来的还是太匆忙了
 
     约定地点离学校并不远，据说是个没人住的“鬼小区”
 
@@ -268,16 +272,8 @@ label chapter02:
     pause 2.5
     "……好吧什么都没有"
     pause 1
-    with hpunch
-    "！又是……"
     scene 11_nightroad at zoom_out_t
-    pause 2.5
     "…………"
-    with hpunch
-    pause 1
-    "！…………"
-    pause 1
-    "……………………"
     """
     我紧绷着神经，小心翼翼地看着周围有没有行人
 
@@ -305,7 +301,7 @@ label chapter02:
 
     这么早，这么冷，虽然今天不用扫雪，可是还是觉得很辛苦啊
 
-    我感到了一丝心酸，侧着身子快步走了过去
+    我感到一丝心酸，侧着身子快步走了过去
 
     凌晨时分的路灯感觉比平时更加昏暗，整个城市看上去像一个病人
 
@@ -336,11 +332,11 @@ label chapter02:
     说是鬼屋我都相信……
     “游乐场连环杀人案”——我想起了看过的类似的都市怪谈
 
-    真的要在这个地方面基吗？好恐怖……不会突然闪出来一个变态把我这个花季女大学生生吞活剥了吧
+    真的要在这个地方面基吗？好恐怖……不会突然闪出来一个变态把我生吞活剥了吧
 
     但是再三询问，玉米和我说就是这里，我也就只好信了
 
-    呜呜，文学少女口中的“后朋风情”一点都不浪漫啊
+    呜呜，文学少女口中的“主朋风情”一点都不浪漫啊
     """
     stop music fadeout 4
     pause 0.5
@@ -351,7 +347,7 @@ label chapter02:
 
     我赶紧上前扶她
     """
-    play music "audio/Calm/milktea.mp3" 
+    play music "audio/Calm/09.mp3" fadein 2 
     c"""
     啊啊啊，你就是玉米老师吧。你怎么了
 
@@ -381,20 +377,21 @@ label chapter02:
     show ym_winter_kind:
         xpos 1000
     with dissolve
-    show cy_winter_calm:
+    show cy_winter_smile:
         xpos 2840
     with dissolve
     y"你可能会觉得幼稚吧嘿嘿……"
     y"但是我觉得这里的“健身设施”真的挺好玩的"
     c"一个人也会来吗，这种地方太荒凉了吧"
     c"我经常在这附近逛，都嫌这里太破了"
+    hide ym_winter_kind
     show ym_winter_happy:
         xpos 1000
     with dissolve
     y"但是附近都没有这种地方啊"
     y"（用眼光挑着不远处的秋千）学校里倒是有个差不多的秋千，但是我想不会有人愿意在众目睽睽之下耍秋千吧"
     c"还真是……你这样一说我也想玩了"
-    hide cy_winter_calm with dissolve
+    hide cy_winter_smile with dissolve
     "欸嘿~我麻溜地坐了上去，如若无人地荡了起来"
     "~~~（荡秋千的样子）"
     hide ym_winter_happy
@@ -407,25 +404,18 @@ label chapter02:
     with dissolve
     c"喂，你笑什么啊……很好笑吗"
     c"好吧，可能还真有点好笑哈哈……"
-    y"我只是觉得潮鸢老师你跟我在一起也学坏了啊。你看，你也“变成幼稚鬼”了"
+    y"我只是觉得潮鸢老师你跟我在一起也学坏了啊"
     hide cy_winter_fluster
     show cy_winter_sign:
         xpos 2840
     with dissolve
-    c"""
-    （从秋千上灰溜溜下来）这这……我才不是幼稚鬼啊啊……
-    
-    好吧，我就是爱玩（又灰溜溜坐回去了）
-
-    若是要说幼稚鬼的话，难道你就没有玩过吗？
-    """
-    y"哼哼~"
+    c"我不管，我就是爱玩（又灰溜溜坐回去了）"
     hide ym_winter_kind with dissolve
     hide cy_winter_sign with dissolve
     """
     接下来我们互相调侃了几句，可是很快陷入了沉默
 
-    能聊的东西都在QQ上聊过了……
+    能聊的东西都在线上聊过了……
 
     而且我和玉米老师也就是只会偶尔交流一下写作的关系
 
@@ -438,7 +428,7 @@ label chapter02:
     show ym_winter_happy:
         xpos 1000
     with dissolve
-    show cy_winter_calm:
+    show cy_winter_smile:
         xpos 2840
     with dissolve
     y"""
@@ -462,31 +452,35 @@ label chapter02:
     y"""
     那也是没办法的事。
 
-    不过倒是可以当成后朋克版的“承天寺夜游”了
+    不过倒是可以当成主朋克版的“承天寺夜游”了
     """
     c"这样说还真是啊……不过怎么突然文艺起来了"
-    "我蹲在地上陷入了沉默。狂风没有消歇的意思，我裹紧了衣服，就这么默默地“挨揍”"
+    "我蹲在地上陷入了沉默"
+    "狂风没有消歇的意思，我裹紧了衣服，就这么默默地“挨揍”"
     hide ym_winter_ting_2
     show ym_winter_happy:
         xpos 1000
     with dissolve
-    y"欸，这种时候就该听一首热闹屋的曲子"
-    c"玉米老师也爱听热闹屋吗，我刚刚还在听来着"
-    y"知道肯定还是知道啦，不过我不怎么爱听。但是我觉得热闹屋的曲子是最适合眼前这种场景"
+    y"欸，这种时候就该听一首皇家海盗的曲子"
+    hide cy_winter_smile
+    show cy_winter_happy:
+        xpos 2840
+    c"玉米老师也爱听皇家海盗吗，我刚刚还在听来着"
+    y"知道肯定还是知道啦，不过我不怎么爱听。但我觉得很适合眼前这种场景"
     y"你看……"
     hide ym_winter_happy with dissolve
-    hide cy_winter_calm with dissolve
+    hide cy_winter_happy with dissolve
     stop music fadeout 4
     """
-    玉米老师来了兴致，她最近在做和热闹屋相关的视频，于是滔滔不绝地说了起来
+    玉米老师来了兴致，她最近在做和皇家海盗相关的视频，于是滔滔不绝地说了起来
     
     闲暇的时候还在想着这些吗，好敬业啊
     
-    我对于热闹屋了解得不多，所以有些心不在焉
+    我对于皇家海盗了解得不多，所以有些心不在焉
 
     心思反倒是在这片游乐园漫游了起来——
     """
-    play music "audio/Impression/Yumi.mp3" fadein 4
+    play music "audio/Impression/10.mp3" fadein 4
     scene 13_ruinspark with Dissolve(2)
     "昏暗的月光照耀下，这片废墟游乐园简直大的可怕"
     """
@@ -508,19 +502,17 @@ label chapter02:
     
     却每每因为这座城市极大的反差而心里五味杂陈
     """
-    scene 5_busy_city with Dissolve(2)
+    scene 5_busy_city_2 with Dissolve(2)
     """
     想起中心城区那些极其繁华的路段，车水马龙，灯红酒绿
     
-    就算上了一些年代，略有老旧的建筑反而更加耐看了
+    就算上了一些年代，略有老化的建筑反而更加耐看了
 
     而且这些还说明中心城区在很久以前就那么繁华了
     
     而同样是一座城市，这里却没有任何值得留恋的地方
-
-    普通得像是三线城市，甚至有些地方已经开始破败了
     
-    交通也差极了，去哪里都远，就这样物价还一点都不便宜
+    许多地方已经开始破败，交通也差极了，去哪里都远，就这样物价还一点都不便宜
 
     我原本是奔着“来大城市感受繁华”的目的才报的嘉大
 
@@ -566,26 +558,35 @@ label chapter02:
 
     其实这是Morotama的我最喜欢的一首歌的歌词啦
 
-    刚刚的那番回答，很像是后朋迷会说的话对吧
+    刚刚的那番回答，很像是主朋迷会说的话对吧
 
     如果有讨厌有十分，那么他们会打十一分
     """
-    c"哈哈哈哈哈哈，真是。不过大部分的后朋迷不像玉米老师那么有精神啊"
+    c"哈哈哈哈哈哈，真是。不过大部分的主朋迷不像玉米老师那么有精神啊"
     y"因为我不是你说的“大部分”啊"
     y"如果是我的话，十分会打九分"
     c"为什么，说好的十一分呢"
     y"倒扣了"
     c"噗，这不好笑"
-    y"“即使身处荒凉废墟之中，也自以为是无限繁华之王”"
-    y"或许心流在哀伤到极致之后，也会奔腾而出希望"
-    c"真意外啊……这可不像是后朋迷会说出来的话……"
+    y"""
+    说起城市的夜景，大部分人浮现在脑海里的应该是市中心的那种繁华景象吧。无论怎么说，也不会把此处荒凉的样子和“城市”联系起来
+
+    自己生活的地方和理想中的繁华有着天壤之别，任凭谁也会有着一股怨气，就更不愿意承认这里也是“城市”的一部分了，这并不怪他们
+    
+    但对于我来说却并不是这样——如果“我所处”的当下是一种对自己的惩罚，那“我以外”的世界就只是一种幻想——一种逃避的心理所产生的海市蜃楼
+    
+    毕竟，如果所有我得不到的东西都是真的，那未免也太折磨了，不如一厢情愿地认为它们都是假的好了
+    
+    肉体在废墟之中拾荒而生，精神则偶尔在海滩上捡捡贝壳，这两者在我心里并没有本质的差别，这就是为什么我会保留一分
+    """
+    c"真意外啊……这可不像是主朋迷会说出来的话……"
     c"我还以为玉米老师会悲观得多呢"
     y"""
-    后朋迷也不是总那么颓丧的
+    主朋迷也不是总那么颓丧的
 
-    后朋本身是一个宽泛的概念，后朋迷自然也是千人千面啊
+    主朋本身是一个宽泛的概念，主朋迷自然也是千人千面啊
 
-    在我看来，典型的后朋迷有两种
+    在我看来，典型的主朋迷有两种
     
     一种是头破血流人生烂透了，显得沧桑和平静；
     
@@ -615,7 +616,7 @@ label chapter02:
     scene 14_before_sunrise with Fade(1,2,1)
     "我看了一眼手机的预报，离日出大概还有半个小时，于是和玉米老师有一句没一句地闲聊了起来" with Dissolve(1)
     "不知怎的，竟然有些迫不及待"
-    play music "audio/Calm/rengadoor.mp3"
+    play music "audio/Calm/11.mp3"
     """
     都说黎明前的半小时是夜里最黑暗的时候
     
@@ -688,14 +689,14 @@ label chapter02:
     show ym_winter_kind:
         xpos 1000
     with dissolve
-    show cy_winter_calm:
+    show cy_winter_happy:
         xpos 2840
     with dissolve 
     c"这就是希望吗——"
     y"""
-    嗯嗯，这就是希望啊。
+    嗯嗯，这就是希望啊
 
-    你看，即使这般荒凉而熟视无睹的“废墟游乐园”，也会在日出时变成一番可喜的景象
+    你看，即使这荒凉而熟视无睹的“废墟游乐园”，也会在日出时变成一番可喜的景象
     
     所以即使称不上喜欢，我也并不讨厌这里
     """
@@ -715,11 +716,15 @@ label chapter02:
     with dissolve
     y"一辈子吗？——听起来好麻烦啊"
     c"欧内该！——如果能这样的话，瓦塔西——"
-    y"听不懂在说什么啦。不过看起来潮鸢老师很喜欢啊，如果是这样的话我也很开心。其实这样的场景每天都会发生一遍，我只不过邀请潮鸢老师观看了仅仅一次而已。"
+    hide ym_winter_ting
+    show ym_winter_happy:
+        xpos 1000
+    y"听不懂在说什么啦。不过看起来潮鸢老师很喜欢啊，如果是这样的话我也很开心"
+    y"其实这样的场景每天都会发生一遍，我只不过邀请潮鸢老师观看了仅仅一次而已。"
     y"当然熬夜到这么晚也不好，下次潮鸢老师可要好好睡觉不许熬那么晚了"
     c"切，玉米老师还不是"
-    hide ym_winter_ting with dissolve
-    hide cy_winter_calm with dissolve
+    hide ym_winter_happy with dissolve
+    hide cy_winter_happy with dissolve
     """
     于是我就这样和玉米老师互相调侃了起来
     

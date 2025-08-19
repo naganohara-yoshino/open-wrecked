@@ -5,7 +5,7 @@ label chapter03:
     with Pause(3)
     scene 16_shokudou with Fade(1.5,2,1)
     with Pause(1)
-    play music "audio/Calm/UniversityLife.mp3" fadein 3
+    play music "audio/Calm/03.mp3" fadein 3
     c"啊，人这么少吗……" with Dissolve(1)
     """
     工作日时一座难求的食堂，一到周末就门可罗雀了
@@ -54,7 +54,7 @@ label chapter03:
     c"呜哇"
     "我正想着怎么去确认的时候，头顶突然传来吓人的声音"
     hide sw_face with dissolve
-    play music "audio/Calm/Midorikaze.mp3" fadein 2
+    play music "audio/Calm/12.mp3" fadein 2
     show sw_winter_giddy :
         xpos 1000   
     with dissolve
@@ -207,7 +207,7 @@ label chapter03:
     scene black with dissolve
     scene 17_dormitory with circle
     with Pause(1)
-    play music "audio/Happy/「依頼」 DBD file No.02.mp3" fadein 4
+    play music "audio/Happy/13.mp3" fadein 4
     "……这家伙怎么回事" with dissolve
     """
     吃完饭就兴高采烈地拉着我去玩，搞得像准备万全了一样
@@ -306,7 +306,7 @@ label chapter03:
     with dissolve
     s"久等啦——欸，这个女孩子是？"
     c"是群里的“玉米”老师啦，也就是beta站上那个叫“潮汐能洗衣机”的up主"
-    c"你应该认识吧，前几天她那个寂静屋的视频，你不是超级激动的来着"
+    c"你应该认识吧，前几天她那个皇家海盗的视频，你不是超级激动的来着"
     hide ym_winter_smile
     show ym_winter_happy:
         xpos 3840-1000
@@ -363,6 +363,7 @@ label chapter03:
     define s_c = Character("萨&潮")
     s_c"好"
     "（三个人一起走出了校门）"
+    stop music fadeout 4
     scene black with dissolve
     scene 18_metro_station with circle
     "进入地铁站，我们搭上自动扶梯，慢慢地向下"
@@ -388,6 +389,7 @@ label chapter03:
         xpos 3840-1000
         ypos 2000
     c"Lucky~这个点人不是很多欸"
+    play music "audio/Happy/14.mp3" fadein 4
     y"15号线的话，除了早晚上下班都没几个人"
     y"记得应该是1号线人流量最大——我来嘉城上学的时候坐过，真是太挤了"
     c"""
@@ -520,7 +522,8 @@ label chapter03:
     c"再说，今天是谁在宿舍里耽误了那么久，好难猜啊~"
     s"哼哼，首先排除我！"
     define gb = Character("广播")
-    gb"{i}列车即将驶入，请各位乘客有序上车，避免拥挤{i}"
+    gb"{i}列车即将驶入，请各位乘客有序上车，避免拥挤{/i}"
+    stop music fadeout 4
     scene 20_in_the_metro with down1
     """
     列车随着声音驶来，停了一小会后开了门
@@ -531,6 +534,7 @@ label chapter03:
     """
     s"那边有位置，我背这么多东西去那边坐下，出站再集合吧"
     y"好——那就待会再见"
+    play music "audio/Calm/12.mp3" fadein 4
     """
     萨瓦走向旁边的车厢，消失在我的视野中
 
@@ -591,6 +595,7 @@ label chapter03:
 
     后来我上网简单了解了一下主朋的文化内涵
     """
+    stop music fadeout 4
     scene 21_host_punk with dissolve
     y"""
     这种音乐着一种深刻的悲剧内核，是后现代的意趣
@@ -604,6 +609,7 @@ label chapter03:
     高三的精神状态你也知道，所以这种“废墟主义”击中了我心中的一些东西，就一发不可收拾的喜欢上了……
     """
     scene 20_in_the_metro with dissolve
+    play music "audio/Calm/12.mp3" fadein 2
     c"好厉害……出口成章啊……我也想叫你“偶像大人”了"
     y"啊啊啊不要啦……"
     gb"{i}六角广场站到了，可换乘2号线，请各位乘客有序下车，请勿拥挤{i}"
@@ -613,6 +619,7 @@ label chapter03:
     c"嗯，我给她发个信息问一下"
     c"啊，她秒回了，已经在门口等了"
     y"好" 
+    stop music fadeout 4
     scene black with dissolve
     image 22_KTV:
         "images/BJ/22_KTV.png"
@@ -626,6 +633,7 @@ label chapter03:
 
     玉米在一边好奇地操作着点歌的液晶面板
     """
+    play music "audio/Happy/14.mp3" fadein 4
     c"你要唱歌吗？"
     c"她的这首歌你肯定听过吧，就请玉米老师待会为我们活跃下气氛啦"
     y"欸？！不行啦……"
@@ -742,7 +750,9 @@ label chapter03:
     s"那我就把我会弹的都点上去咯，会唱就唱！"
     "萨瓦一下子点了好多首……不过都是那种很出名的歌"
     c"哼哼，放马过来！"
+    stop music fadeout 4
     scene 22_KTV with Fade(1,2,1)
+    play music "Impression/04.mp3" fadein 4
     """
     呼……好累
 
@@ -805,6 +815,7 @@ label chapter03:
     with dissolve
     y"相比于遗憾的话，我觉得还是要更理性一点才好……"
     y"萨瓦老师你有点醉了吧？我也感觉有些闷热，不太好思考——"
+    stop music fadeout 4
     show sw_winter_wrecked at y_move_t
     s"我们大可以先试试嘛！现在就怂了，你就不可惜……"
     hide ym_winter_ting_2
@@ -852,6 +863,7 @@ label chapter03:
     只能赌一把了……
     """
     scene 23_on_the_bridge with Fade(1,2,1)
+    play music "audio/Impression/15.mp3"
     """
     ……现在在我眼前的是
 
@@ -1054,6 +1066,7 @@ label chapter03:
 
     玉米轻轻地发出一声叹息，接着说道
     """
+    stop music fadeout 4
     scene 23_on_the_bridge with dissolve
     show ym_winter_smile:
         xpos 1000
@@ -1074,6 +1087,7 @@ label chapter03:
     
     偶尔我会幻想，如果有一点点闲钱，是不是也可以去尝试一下“那边”的生活呢？
     """
+    play music "audio/Impression/10.mp3" 
     scene 24_view_from_the_bridge with dissolve
     y"""
     ——吃吃那些甜品，玩玩那些游戏，或者单纯在假期享受完全放空的时间，而不是为了工作而奔波
@@ -1098,9 +1112,7 @@ label chapter03:
     
     到了嘉城这个一线城市，我才发现贫穷会毁掉我的一切，就像被黏在蜘蛛网上一样
     
-    瞻前顾后，斤斤计较，一天到晚为几个数字苦恼，做什么事都要三思，生怕走错一步就万劫不复
-    
-    这或许也是一种现代版的“大隐隐于市”吧，因为只有心境足够超脱的人，才能在清贫的状态下在城市里“生活”，其他人只能苟延残喘地“生存”而已
+    瞻前顾后，斤斤计较，一天到晚为几个数字苦恼，做什么事都要三思，生怕走错一步就万劫不复^
     """
     c"……"
     """
@@ -1202,7 +1214,15 @@ label chapter03:
         xpos 1000
     y"再见啦，谢谢你听我说这些"
     c"欸，玉米？就，走了吗？"
-    y"嗯，我还有“必须”要做的事"
+    y"""
+    嗯，再见了
+    
+    今天在KTV玩的真的很开心，谢谢你们
+    
+    抱歉情绪有些失控，让你们担心了……都是我自己的问题
+    
+    有机会下次再一起去玩吧！……
+    """
     hide ym_winter_smile with dissolve
     hide cy_winter_cold with dissolve
     """
@@ -1229,9 +1249,9 @@ label chapter03:
     """
     y"……欸"
     """
-    听完我没头没脑的友情宣言，玉米楞了好一会
+    听完我没头没脑的“友情宣言”，玉米楞了好一会
 
-    然后“噗呲”一声笑了出来
+    然后噗呲一声笑了出来
 
     ……终于不再是苦涩的微笑了
 
@@ -1239,6 +1259,7 @@ label chapter03:
 
     “再见了”，她的口型这么说，然后她消失在道路的尽头
     """
+    stop music fadeout 4
     scene black with dissolve
     "我站在步道中央，整理着我混乱的思绪"
     "差点忘记了手机正在响"

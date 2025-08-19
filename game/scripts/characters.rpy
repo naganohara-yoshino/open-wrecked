@@ -59,6 +59,13 @@ image sw_winter_surprised:
     yanchor 0.47
     ypos 2160
 
+## 萨瓦-冬-愤怒
+image sw_winter_angry:
+    "images/LH/sw_winter_angry.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+
 ## 潮鸢-冬-愤怒
 image cy_winter_angry:
     "images/LH/cy_winter_angry.png"
