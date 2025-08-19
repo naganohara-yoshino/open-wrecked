@@ -53,6 +53,11 @@ screen chat_screen(group_title, dialog):
 
             font "ht.ttf"
             size 60
+    
+    #检测跳过——如果renpy.get_skipping()为True，自动触发一个Hide()，隐藏界面
+    if renpy.get_skipping():
+        timer 0.0000000001 action Hide()
+
 
 
 screen message(*, name, content, avatar, from_myself = False, **kw):
@@ -65,7 +70,9 @@ screen message(*, name, content, avatar, from_myself = False, **kw):
 
             vbox:
                 null height 20
-                add avatar 
+                add avatar:
+                    xsize 100
+                    ysize 100
 
             vbox:
                 xsize 700
@@ -98,7 +105,6 @@ screen message(*, name, content, avatar, from_myself = False, **kw):
                 xalign 0.0
                 null height 20
                 add avatar 
-
 
 
 screen msg_bubble(*, content, from_myself = False):

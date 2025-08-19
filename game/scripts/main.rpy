@@ -53,4 +53,4 @@ label start:
     call chapter03 from _call_chapter03
     call chapter04 from _call_chapter04
     
-    #call chapter05 from _call_chapter05
+    call chapter05 from _call_chapter05

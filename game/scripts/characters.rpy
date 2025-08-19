@@ -226,6 +226,8 @@ layeredimage cy:
             'cy_winter_speechless'
         attribute sign:
             'cy_winter_sign'
+        attribute sigh:
+            'cy_winter_sign'
         attribute smile:
             'cy_winter_smile'
         attribute smile_2:
@@ -258,3 +260,5 @@ layeredimage ym:
             'ting_2'
         attribute sad:
             'sad'
+        attribute amiable:
+            'amiable'
