@@ -35,7 +35,7 @@ label chapter05:
     scene black with Dissolve(2.0)
     "……"
 
-    play music "audio/Impression/Sawa.mp3" fadein 3
+    play music "audio/Impression/04.mp3" fadein 3
     scene 6_cafebar
     show sw wrecked at _left with dissolve
     s "kyaaaa~" with vpunch
