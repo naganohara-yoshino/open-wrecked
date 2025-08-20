@@ -60,7 +60,7 @@ screen chat_screen(group_title, dialog):
 
 
 
-screen message(*, name, content, avatar, from_myself = False, **kw):
+screen message(*, name, avatar, from_myself = False, **kw):
     if not from_myself:
         hbox:
             xsize 810
@@ -81,7 +81,10 @@ screen message(*, name, content, avatar, from_myself = False, **kw):
                     xalign 0.0
                     text name style "info_text"
                 vbox:
-                    use msg_bubble(content = content)
+                    if "image" in kw:
+                        use img_bubble(img = kw["image"])
+                    elif "content" in kw:
+                        use msg_bubble(content = kw["content"])
 
 
     else:
@@ -99,12 +102,31 @@ screen message(*, name, content, avatar, from_myself = False, **kw):
                     text name style "info_text"
                 vbox:
                     xalign 1.0
-                    use msg_bubble(content = content, from_myself = True)
+                    if "image" in kw:
+                        use img_bubble(img = kw["image"])
+                    elif "content" in kw:
+                        use msg_bubble(content = kw["content"], from_myself = True)
 
             vbox:
                 xalign 0.0
                 null height 20
                 add avatar 
+
+screen img_bubble(*, img):
+    
+    python:
+        x, _ = renpy.image_size(img)
+        mask = Frame("gui/simulatedphone/mask.png", 25, 25, 25, 25)
+        result = AlphaMask(img ,mask)
+        ratio = 600.0 / x
+
+    vbox:
+        xmaximum 600
+        if x < 600:
+            add result
+        else:
+            add result zoom ratio
+
 
 
 screen msg_bubble(*, content, from_myself = False):
