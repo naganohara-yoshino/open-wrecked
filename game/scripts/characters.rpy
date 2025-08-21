@@ -194,8 +194,8 @@ layeredimage sw:
             'sw_winter_surprised'
         attribute wrecked:
             'sw_winter_wrecked'
-        attribute wrecked2:
-            'sw_winter_wrecked2'
+        attribute wrecked_2:
+            'sw_winter_wrecked_2'
         attribute smile:
             'sw_winter_smile'
         attribute shock:
