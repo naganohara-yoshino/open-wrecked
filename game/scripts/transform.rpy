@@ -122,6 +122,8 @@ transform _right:
     xpos 3840-1000
 
 
+transform _center:
+    xalign 0.6
 ############### 使用指南 ###############
 
 #   scene street day at coloriz_t

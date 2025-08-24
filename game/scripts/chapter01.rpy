@@ -134,6 +134,7 @@ label chapter01:
 
             思来想去，我还是硬着头皮钻进了小巷子里
             """
+            $met_sawa_in_alley=False
 
         "……不是矫情的时候啊，也许走这里能回去呢":
             with Pause(0.5)
@@ -151,6 +152,7 @@ label chapter01:
 
             我快步上前
             """
+            $met_sawa_in_alley=True
 
     scene 1_wrecked_sawa
     with fade
