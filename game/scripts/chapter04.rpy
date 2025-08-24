@@ -492,7 +492,7 @@ label chapter04:
     现在这样，只能算是走投无路姑且一试了……
     """
     scene black with Dissolve(2)
-    scene express_station with circle
+    scene 26_express_station with circle
     play music "audio/Calm/03.mp3" fadein 4
     """
     驿站里人好多啊……好挤，而且又闷又热
