@@ -269,3 +269,14 @@ layeredimage ym:
             'sad'
         attribute amiable:
             'amiable'
+
+
+image bl_winter_normal='images/LH/Baile/baile_winter_normal.png'
+
+
+image sw_mother:
+    'images/LH/sw_mother.png'
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+    zoom 0.95
