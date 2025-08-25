@@ -2,10 +2,10 @@ label chapter05:
     with Pause(1)
     scene zc1 with Fade(1,0.5,1.5,color = "#ffffff")
     with Pause(3)
-    scene 26_sleety_city with Fade(1.5,2,1)
+    scene 27_sleety_city with Fade(1.5,2,1)
     with Pause(1)
     play music "audio/Calm/01.mp3" 
-    "啊啊，就淋一点雨应该不会感冒吧——"
+    "啊啊，就淋一点雨应该不会感冒吧——" with dissolve
     "十一月末的嘉城，气温稍稍有些回升"
     "寒潮偃旗息鼓之后，终于回到了往年的温度"
     "嚣张一时的漫天大雪也被盐粒一般的雨夹雪取而代之"
@@ -23,7 +23,8 @@ label chapter05:
     "可现在无论我怎么数，都只有可怜的五百块……"
     "还不知道萨瓦加班弄到了多少钱"
     "希望不会特别难看吧"
-    "我暗自在心里做了最坏的打算：如果钱实在太少的话，我的那把吉他就不买了。无论如何，必须保证玉米能收到一份完美的生日礼物"
+    "我暗自在心里做了最坏的打算：如果钱实在太少的话，我的那把吉他就不买了"
+    "无论如何，必须保证玉米能收到一份完美的生日礼物"
     "但是等下要怎么和萨瓦交代啊……"
     "我叹了口气，面色凝重地迈着脚步"
     "打在脸上的雨滴愈发潮湿了"
@@ -614,13 +615,13 @@ label chapter05:
      
     嘿嘿，嘿嘿…… 
     '''
-    scene 8_street with down1
+    scene black with down1
     '''
     …… 
 
     就这样不知道“热”了多久，我在迷迷糊糊中穿过了无数街道  
     '''
-    scene 27_alley_2 with down1
+    scene 28_alley_2 with down1
     '''
     脑子终于“冷却”了下来，还知道自己淋了雨后是会冷死的  
      
@@ -647,7 +648,7 @@ label chapter05:
      
     求求了……求求了……别痛了 
     '''
-    scene 27_alley_2 with Dissolve(2.0):
+    scene 28_alley_2 with Dissolve(2.0):
         blur 10
     '''
     ……  
@@ -690,6 +691,10 @@ label chapter05:
     '''
     stop music fadeout 4
     scene black with dissolve
+    pause 1.0
+    window hide
+    play audio "audio/Impression/前奏.mp3" volume 0.3 fadein 4 fadeout 4
+    pause 10
     '''
     ……  
      
@@ -711,7 +716,7 @@ label chapter05:
      
     我疯了一般地兴奋起来，不顾膝盖的疼痛，趔趄地站起来朝声音的方向走去  
     '''
-    scene 27_alley_2 with dissolve
+    scene 28_alley_2 with dissolve
     ''' 
     道路的尽头——  
 

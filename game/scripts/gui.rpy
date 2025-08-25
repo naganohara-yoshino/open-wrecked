@@ -59,7 +59,7 @@ define gui.interface_text_color = '#ffffff'
 define gui.text_font = "systsemi.otf"
 
 ## 角色名称使用的字体。
-define gui.name_text_font = "dl.ttf"
+define gui.name_text_font = "fs.ttf"
 
 ## 给角色名加粗
 define gui.name_text_bold = False

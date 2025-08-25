@@ -42,8 +42,6 @@ label start:
     hide screen start_sentence with Fade(1,0,0)
     $ quick_menu = True
 
-    if debugger:
-        call debugger_menu
     call chapter01 from _call_chapter01
 
     call chapter01_5 from _call_chapter01_5
