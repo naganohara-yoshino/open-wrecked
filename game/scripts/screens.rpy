@@ -112,7 +112,7 @@ screen say(who, what):
     ## 没有空间。
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
-
+    use w_quick_menu()
 
 ## 通过 Character 对象使名称框可用于样式化。
 init python:
@@ -257,7 +257,7 @@ style neo_choice_button_text:
 ##
 ## 快捷菜单显示于游戏内，以便于访问游戏外的菜单。
 
-screen quick_menu():
+screen w_quick_menu():
 
     ## 确保该菜单出现在其他屏幕之上，
     zorder 100
@@ -314,8 +314,8 @@ transform button_transform:
 
 
 ## 此代码确保只要用户没有主动隐藏界面，就会在游戏中显示 quick_menu 屏幕。
-init python:
-    config.overlay_screens.append("quick_menu")
+#init python:
+    #config.overlay_screens.remove("quick_menu")
 
 default quick_menu = True
 
@@ -440,6 +440,19 @@ screen navigation():
         #     textbutton _("退出") action Quit(confirm=not main_menu)
 
 
+
+
+screen navigation():
+    predict True
+    tag menu
+    add 'gui/neo/navigation/bg.png'
+    
+    add 'gui/neo/navigation/return_tips.png' pos (101,1777-17)
+
+
+    imagebutton idle 'gui/neo/navigation/return.png' pos (126,1896) action Return()
+
+
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
 
@@ -457,48 +470,6 @@ style navigation_button_text:
 ##
 ## https://doc.renpy.cn/zh-CN/screen_special.html#main-menu
 
-## 新设置的主菜单导航
-screen navigation_main_menu():
-    hbox:
-        spacing 200  
-        xalign 0.5
-        ycenter 1970
-
-        button:
-            action Start()
-            vbox:
-                text "开始" style "button_text_1" 
-                text "Start" style "button_text_2"
-        
-        button:
-            action ShowMenu("load")
-            vbox:
-                text "读取" style "button_text_1"
-                text "Load" style "button_text_2"
-        
-        button:
-            action ShowMenu("preferences")
-            vbox:
-                text "设置" style "button_text_1"
-                text "Settings" style "button_text_2"
-        
-        button:
-            action ShowMenu("about")
-            vbox:
-                text "关于" style "button_text_1"
-                text "About" style "button_text_2"
-        
-        button:
-            action ShowMenu("help")
-            vbox:
-                text "帮助" style "button_text_1"
-                text "Help" style "button_text_2"
-            
-        button:
-            action Quit()
-            vbox:
-                text "退出" style "button_text_1"
-                text "Exit" style "button_text_2"
 
 style button_text_1:
     size 100 
@@ -516,20 +487,43 @@ style button_text_2:
 
 screen main_menu():
 
-    style_prefix "main_menu"
 
     ## 此语句可确保替换掉任何其他菜单屏幕。
     tag menu
-
-    add gui.main_menu_background
 
     ## 此空框可使标题菜单变暗。
     frame:
         style "main_menu_frame"
 
-    ## use 语句将其他的屏幕包含进此屏幕。标题屏幕的实际内容在导航屏幕中。
-    use navigation_main_menu
-
+    add 'gui/neo/main_menu/bg.png'
+    hbox:
+        ypos 1832-130
+        xalign 0.5
+        spacing -250
+        imagebutton:
+            idle Composite((810,360),(130,54),'gui/neo/main_menu/start.png')
+            hover 'gui/neo/main_menu/start_s.png'
+            action Start()
+        imagebutton:
+            idle Composite((810,360),(130,54),'gui/neo/main_menu/load.png')
+            hover 'gui/neo/main_menu/load_s.png'
+            action ShowMenu('load')
+        imagebutton:
+            idle Composite((810,360),(130,54),'gui/neo/main_menu/pref.png')
+            hover 'gui/neo/main_menu/pref_s.png'
+            action ShowMenu('preferences')
+        imagebutton:
+            idle Composite((810,360),(130,54),'gui/neo/main_menu/about.png')
+            hover 'gui/neo/main_menu/about_s.png'
+            action ShowMenu('about')
+        imagebutton:
+            idle Composite((810,360),(130,54),'gui/neo/main_menu/help.png')
+            hover 'gui/neo/main_menu/help_s.png'
+            action ShowMenu('help')
+        imagebutton:
+            idle Composite((810,360),(130,54),'gui/neo/main_menu/quit.png')
+            hover 'gui/neo/main_menu/quit_s.png'
+            action Quit()
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
@@ -565,16 +559,12 @@ style main_menu_version:
 
 screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
+    use navigation
+
     style_prefix "game_menu"
 
-    if main_menu:
-        add gui.main_menu_background
-    else:
-        add gui.game_menu_background
-
     frame:
-        style "game_menu_outer_frame"
-
+        background Null()
         hbox:
 
             ## 导航部分的预留空间。
@@ -621,19 +611,57 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
                     transclude
 
-    use navigation
+    hbox:
+        pos (518,139)
+        if main_menu:
+            spacing 320
+        else:
+            spacing 36
+        if not main_menu:
+            imagebutton:
+                idle Composite((364,124),(77,17),'gui/neo/navigation/history.png')
+                hover 'gui/neo/navigation/history_s.png'
+                selected_idle 'gui/neo/navigation/history_s.png'
+                action ShowMenu('history')
 
-    vbox:
-        xsize 390
-        ysize 190
-        xpos 0.869
-        ypos 0.02
-        anchor (0, 0)
+        if not main_menu:
+            imagebutton:
+                idle Composite((364,124),(77,17),'gui/neo/navigation/save.png')
+                hover 'gui/neo/navigation/save_s.png'
+                selected_idle 'gui/neo/navigation/save_s.png'
+                action ShowMenu('save')
+
         imagebutton:
-            idle "gui/button/return_idle.png"
-            hover "gui/button/return_activated.png"
-            action Return()
-
+            idle Composite((364,124),(77,17),'gui/neo/navigation/load.png')
+            hover 'gui/neo/navigation/load_s.png'
+            selected_idle 'gui/neo/navigation/load_s.png'
+            action ShowMenu('load')
+        imagebutton:
+            idle Composite((364,124),(77,17),'gui/neo/navigation/pref.png')
+            hover 'gui/neo/navigation/pref_s.png'
+            selected_idle 'gui/neo/navigation/pref_s.png'
+            action ShowMenu('preferences')
+        if not main_menu:
+            imagebutton:
+                idle Composite((364,124),(77,17),'gui/neo/navigation/title.png')
+                hover 'gui/neo/navigation/title_s.png'
+                selected_idle 'gui/neo/navigation/title_s.png'
+                action MainMenu()
+        imagebutton:
+            idle Composite((364,124),(77,17),'gui/neo/navigation/about.png')
+            hover 'gui/neo/navigation/about_s.png'
+            selected_idle 'gui/neo/navigation/about_s.png'
+            action ShowMenu('about')
+        imagebutton:
+            idle Composite((364,124),(77,17),'gui/neo/navigation/help.png')
+            hover 'gui/neo/navigation/help_s.png'
+            selected_idle 'gui/neo/navigation/help_s.png'
+            action ShowMenu('help')
+        imagebutton:
+            idle Composite((364,124),(77,17),'gui/neo/navigation/quit.png')
+            hover 'gui/neo/navigation/quit_s.png'
+            selected_idle 'gui/neo/navigation/quit_s.png'
+            action Quit()
     # label title
 
     if main_menu:
@@ -660,13 +688,11 @@ style game_menu_outer_frame:
     background "gui/overlay/game_menu.png"
 
 style game_menu_navigation_frame:
-    xsize 800
+    xsize 200
     yfill True
 
 style game_menu_content_frame:
-    left_margin 120
-    right_margin 60
-    top_margin 30
+    xpos 0
 
 style game_menu_viewport:
     xsize 2760
@@ -705,20 +731,28 @@ screen about():
 
     ## 此 use 语句将 game_menu 屏幕包含到了这个屏幕内。子级 vbox 将包含在
     ## game_menu 屏幕的 viewport 内。
-    use game_menu(_("关于"), scroll="viewport"):
+    use game_menu(_("关于"), scroll="viewport")
 
-        style_prefix "about"
-
+    viewport:
+        mousewheel True 
+        draggable True
+        arrowkeys True
+        xysize (3127,1678)
+        pos (521,397)
         vbox:
 
-            label "[config.name!t]"
-            text _("版本 [config.version!t]\n")
+            add "images/Shippaisaku_nowhite.png":
+                zoom 0.25
+            text _("版本 [config.version!t]\n"):
+                font gui.interface_text_font
 
             ## gui.about 通常在 options.rpy 中设置。
             if gui.about:
-                text "[gui.about!t]\n"
+                text "[gui.about!t]\n":
+                    font gui.interface_text_font
 
-            text _("引擎：{a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only]\n\n[renpy.license!t]")
+            text _("引擎：{a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only]\n\n[renpy.license!t]"):
+                    font gui.interface_text_font
 
 
 style about_label is gui_label
@@ -727,6 +761,7 @@ style about_text is gui_text
 
 style about_label_text:
     size gui.label_text_size
+    font "fonts/MarukoGothicCJKsc-Medium.ttf"
 
 
 ## 读取和保存屏幕 #####################################################################
@@ -755,90 +790,124 @@ screen file_slots(title):
 
     default page_name_value = FilePageNameInputValue(pattern=_("第 {} 页"), auto=_("自动存档"), quick=_("快速存档"))
 
-    use game_menu(title):
-
-        fixed:
-
-            ## 此代码确保输入控件在任意按钮执行前可以获取 enter 事件。
-            order_reverse True
-
-            ## 页面名称，可以通过单击按钮进行编辑。
-            button:
-                style "page_label"
-
-                key_events True
-                xalign 0.5
-                action page_name_value.Toggle()
-
-                input:
-                    style "page_label_text"
-                    value page_name_value
-
+    use game_menu(title)
+    fixed:
+        xysize(3012,1611)
+        pos (521,421)
+        ## 此代码确保输入控件在任意按钮执行前可以获取 enter 事件。
+        order_reverse True
+        vbox:
+            add 'gui/neo/sl/存档.png'
             ## 存档位网格。
             grid gui.file_slot_cols gui.file_slot_rows:
-                style_prefix "slot"
-
                 xalign 0.5
                 yalign 0.5
 
-                spacing gui.slot_spacing
+                xspacing 186
+                yspacing 229
 
                 for i in range(gui.file_slot_cols * gui.file_slot_rows):
 
                     $ slot = i + 1
+                    hbox:
+                        spacing 20
+                        button:
+                            action FileAction(slot)
 
-                    button:
-                        action FileAction(slot)
+                            xysize (840,510)
+                            background 'gui/neo/sl/frame.png'
+                            add FileScreenshot(slot) xalign 0.5 yalign 0.5:
+                                xsize 720
+                                ysize 384
 
-                        has vbox
+                            text FileTime(slot, format=_("{#file_time}%Y-%m-%d %H：%M"), empty=_("空存档位")):
+                                style "slot_time_text"
+                                ypos 466
 
-                        add FileScreenshot(slot) xalign 0.5
-
-                        text FileTime(slot, format=_("{#file_time}%Y-%m-%d %H:%M"), empty=_("空存档位")):
-                            style "slot_time_text"
-
-                        text FileSaveName(slot):
-                            style "slot_name_text"
-
-                        key "save_delete" action FileDelete(slot)
-            ## 用于访问其他页面的按钮。
-            vbox:
-                style_prefix "page"
-
+                            key "save_delete" action FileDelete(slot)
+                        imagebutton:
+                            ypos 14
+                            idle 'gui/neo/sl/delete.png'
+                            hover 'gui/neo/sl/delete_s.png'
+                            action FileDelete(slot)
+            hbox:
                 xalign 0.5
-                yalign 1.0
+                spacing 100
+                if (FilePageName() != 'q') & (FilePageName() != 'a'):
+                    hbox:
+                        text '第':
+                            yoffset 86
+                            style "page_label_text"
+                        add "gui/neo/sl/[FilePageName()].png":
+                            yoffset 107
+                            xoffset 6
+                            at transform:
+                                matrixcolor InvertMatrix()
+                                zoom 1.18
+                        text '页':
+                            yoffset 86
+                            style "page_label_text"
 
+                if FilePageName() == 'q':
+                    hbox:
+                        text '快捷存档':
+                            yoffset 86
+                            style "page_label_text"
+                if FilePageName() == 'a':
+                    hbox:
+                        text '自动存档':
+                            yoffset 86
+                            style "page_label_text"
                 hbox:
                     xalign 0.5
+                    yoffset 100
+                    spacing 92
 
-                    spacing gui.page_spacing
+                    imagebutton:
+                        idle "gui/neo/sl/未激活←.png"
+                        hover "gui/neo/sl/激活←.png"
+                        selected_idle "gui/neo/sl/激活←.png"
+                        insensitive "gui/neo/sl/激活←.png"
+                        action FilePagePrevious()
+                        yalign 0.5
 
-                    textbutton _("<") action FilePagePrevious()
+                    hbox:
+                        yoffset 8
+                        spacing 36
+                        if config.has_autosave:
+                            imagebutton:
+                                idle Composite((66,89),(3,3),"gui/neo/sl/a.png")
+                                hover "gui/neo/sl/a_s.png"
+                                selected_idle "gui/neo/sl/a_s.png"
+                                action FilePage('auto')
+                                xysize (66,89)
+
+                        if config.has_quicksave:
+                            imagebutton:
+                                idle Composite((66,89),(3,3),"gui/neo/sl/q.png")
+                                hover "gui/neo/sl/q_s.png"
+                                selected_idle "gui/neo/sl/q_s.png"
+                                action FilePage('quick')
+                                xysize (66,89)
+                        ## range(1, 10) 给出 1 到 9 之间的数字。
+                        for page in range(1, 7):
+                            imagebutton:
+                                idle Composite((66,89),(3,3),"gui/neo/sl/"+str(page)+'.png')
+                                hover "gui/neo/sl/"+str(page)+'_s.png'
+                                selected_idle "gui/neo/sl/"+str(page)+'_s.png'
+                                action FilePage(page)
+                                xysize (66,89)
+
+                    imagebutton:
+                        idle "gui/neo/sl/未激活→.png"
+                        hover "gui/neo/sl/激活→.png"
+                        selected_idle "gui/neo/sl/激活→.png"
+                        insensitive "gui/neo/sl/激活→.png"
+                        sensitive FilePageName() != '6'
+                        action FilePageNext(max=6,wrap=True)
+                        yalign 0.5
                     key "save_page_prev" action FilePagePrevious()
-
-                    if config.has_autosave:
-                        textbutton _("{#auto_page}A") action FilePage("auto")
-
-                    if config.has_quicksave:
-                        textbutton _("{#quick_page}Q") action FilePage("quick")
-
-                    ## range(1, 10) 给出 1 到 9 之间的数字。
-                    for page in range(1, 10):
-                        textbutton "[page]" action FilePage(page)
-
-                    textbutton _(">") action FilePageNext()
-                    key "save_page_next" action FilePageNext()
-
-                if config.has_sync:
-                    if CurrentScreenName() == "save":
-                        textbutton _("上传同步"):
-                            action UploadSync()
-                            xalign 0.5
-                    else:
-                        textbutton _("下载同步"):
-                            action DownloadSync()
-                            xalign 0.5
-
+                    key "save_page_next" action FilePageNext(max=6,wrap=True)
 
 style page_label is gui_label
 style page_label_text is gui_label_text
@@ -857,7 +926,17 @@ style page_label:
 style page_label_text:
     textalign 0.5
     layout "subtitle"
-    hover_color gui.hover_color
+    size 70
+    color '#000'
+    font gui.interface_text_font
+    kerning 10
+
+style slot_time_text:
+    textalign 0.5
+    size 35
+    color '#000'
+    font gui.interface_text_font
+    kerning 2
 
 style page_button:
     properties gui.button_properties("page_button")
@@ -882,107 +961,135 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("设置"), scroll="vpgrid"):
+    use game_menu(_("设置"))
 
+    fixed:
+        xysize (3127,1680)
+        pos (570,406)
         vbox:
             xsize 2640
 
             hbox:
                 xsize 2640
                 ysize 585
-                # box_wrap True
+                spacing 110-20
+                vbox:
+                    image "gui/neo/pref/A显示.png"
+                    spacing 32
+                    hbox:
+                        imagebutton:
+                            idle "gui/neo/pref/window_idle.png"
+                            hover "gui/neo/pref/window_hover.png"
+                            selected_idle "gui/neo/pref/window_hover.png"
+                            action Preference("display", "window")
 
-                # if renpy.variant("pc") or renpy.variant("web"):
+                        imagebutton:
+                            idle "gui/neo/pref/fullscreen_idle.png"
+                            hover "gui/neo/pref/fullscreen_hover.png"
+                            selected_idle "gui/neo/pref/fullscreen_hover.png"
+                            action Preference("display", "fullscreen")
 
                 vbox:
-                    xsize 640
-                    ysize 585
-                    # style_prefix "radio"
-                    image "gui/preferencesui/display.png"
-
-                    imagebutton:
-                        idle "gui/preferencesui/window_idle.png"
-                        hover "gui/preferencesui/window_hover.png"
-                        action Preference("display", "window")
-
-                    imagebutton:
-                        idle "gui/preferencesui/fullscreen_idle.png"
-                        hover "gui/preferencesui/fullscreen_hover.png"
-                        action Preference("display", "fullscreen")
-
-                null width 500
-
-                vbox:
-                    xsize 1500
-                    ysize 585
-                    # style_prefix "check"
-                    image "gui/preferencesui/text.png"
-
+                    spacing 32
+                    image "gui/neo/pref/A快进.png"
                     hbox:
-                        image "gui/preferencesui/text_speed.png"
-                        bar value Preference("text speed") left_gutter 72 right_gutter 72
+                        imagebutton:
+                            idle "gui/neo/pref/skip_idle.png"
+                            hover "gui/neo/pref/skip_activated.png"
+                            selected_idle "gui/neo/pref/skip_activated.png"
+                            action Preference("skip", "toggle")
 
-                    hbox:
-                        image "gui/preferencesui/auto_forward_time.png"
-                        bar value Preference("auto-forward time") left_gutter 72 right_gutter 72
+                        imagebutton:
+                            idle "gui/neo/pref/after_choices_idle.png"
+                            hover "gui/neo/pref/after_choices_activated.png"
+                            selected_idle "gui/neo/pref/after_choices_activated.png"
+                            action Preference("after choices", "toggle")
 
-                ## 可在此处添加 radio_pref 或 check_pref 类型的额外 vbox，以添加
-                ## 额外的创建者定义的偏好设置。
+                        imagebutton:
+                            idle "gui/neo/pref/transitions_idle.png"
+                            hover "gui/neo/pref/transitions_activated.png"
+                            selected_idle "gui/neo/pref/transitions_activated.png"
+                            action InvertSelected(Preference("transitions", "toggle"))
 
-            null height 200
+
+            null height 105
 
             hbox:
                 xsize 2640
                 ysize 780
+                spacing 110-20
                 style_prefix "slider"
-                # box_wrap True
-
-                vbox:
-                    xsize 640
-                    ysize 780
-
-                    image "gui/preferencesui/fast_forward.png"
-
-                    imagebutton:
-                        idle "gui/preferencesui/skip_idle.png"
-                        hover "gui/preferencesui/skip_activated.png"
-                        selected_idle "gui/preferencesui/skip_activated.png"
-                        action Preference("skip", "toggle")
-
-                    imagebutton:
-                        idle "gui/preferencesui/after_choices_idle.png"
-                        hover "gui/preferencesui/after_choices_activated.png"
-                        selected_idle "gui/preferencesui/after_choices_activated.png"
-                        action Preference("after choices", "toggle")
-
-                    imagebutton:
-                        idle "gui/preferencesui/transitions_idle.png"
-                        hover "gui/preferencesui/transitions_activated.png"
-                        selected_idle "gui/preferencesui/transitions_activated.png"
-                        action InvertSelected(Preference("transitions", "toggle"))
-
-
-                null width 500
 
                 vbox:
                     xsize 1500
-                    ysize 780
-                    image "gui/preferencesui/sound.png"
-                    hbox:
-                        image "gui/preferencesui/music_volume.png"
-                        bar value Preference("music volume") left_gutter 72 right_gutter 72
-                    
-                    hbox:
-                        image "gui/preferencesui/sound_volume.png"
-                        bar value Preference("sound volume") left_gutter 72 right_gutter 72
-                        # if config.sample_sound:
-                        #     textbutton _("测试") action Play("sound", config.sample_sound)
+                    ysize 585
+                    image "gui/neo/pref/A文字.png"
 
-                    imagebutton:
-                        idle "gui/preferencesui/mute_all_idle.png"
-                        hover "gui/preferencesui/mute_all_activated.png"
-                        selected_idle "gui/preferencesui/mute_all_activated.png"
-                        action Preference("all mute", "toggle")
+                    vbox:
+                        spacing 72
+                        frame:
+                            background "gui/neo/pref/text_speed.png"
+                            xysize(1521,210)
+                            bar value Preference("text speed"):
+                                left_bar "gui/neo/pref/left.png"
+                                right_bar "gui/neo/pref/right.png"
+                                thumb "gui/neo/pref/slider.png"
+                                xsize 1510
+                                ysize 64
+                                thumb_offset 32
+                                yalign 1.0
+
+                        frame:
+                            background "gui/neo/pref/auto_forward_time.png"
+                            xysize(1521,210)
+                            bar value Preference("auto-forward time"):
+                                left_bar "gui/neo/pref/left.png"
+                                right_bar "gui/neo/pref/right.png"
+                                thumb "gui/neo/pref/slider.png"
+                                xsize 1510
+                                ysize 64
+                                thumb_offset 32
+                                yalign 1.0
+
+
+                vbox:
+                    xsize 1500
+                    ysize 585
+                    image "gui/neo/pref/A音乐.png"
+
+                    vbox:
+                        spacing 72
+                        frame:
+                            background "gui/neo/pref/music_volume.png"
+                            xysize(1521,210)
+                            bar value Preference("music volume"):
+                                left_bar "gui/neo/pref/left.png"
+                                right_bar "gui/neo/pref/right.png"
+                                thumb "gui/neo/pref/slider.png"
+                                xsize 1510
+                                ysize 64
+                                thumb_offset 32
+                                yalign 1.0
+
+                        frame:
+                            background "gui/neo/pref/sound_volume.png"
+                            xysize(1521,210)
+                            bar value Preference("sound volume"):
+                                left_bar "gui/neo/pref/left.png"
+                                right_bar "gui/neo/pref/right.png"
+                                thumb "gui/neo/pref/slider.png"
+                                xsize 1510
+                                ysize 64
+                                thumb_offset 32
+                                yalign 1.0
+
+
+    imagebutton:
+        idle "gui/neo/pref/mute.png"
+        hover "gui/neo/pref/mute_s.png"
+        selected_idle "gui/neo/pref/mute_s.png"
+        pos (2200,1911)
+        action Preference("all mute", "toggle")
 
                     # if config.has_voice:
                     #     label _("语音音量")
@@ -1080,35 +1187,43 @@ screen history():
     ## 避免预缓存此屏幕，因为它可能非常大。
     predict False
 
-    use game_menu(_("历史"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0, spacing=gui.history_spacing):
+    use game_menu('history')
 
-        style_prefix "history"
+    viewport:
+        mousewheel True 
+        draggable True
+        arrowkeys True
+        scrollbars 'vertical'
+        xysize (3127,1678)
+        pos (521,397)
+        vscrollbar_thumb 'gui/neo/misc/slider.png'
+        vscrollbar_base_bar 'gui/neo/misc/bar.png'
+        vscrollbar_xsize 120
+        vscrollbar_ysize 1730
+        vscrollbar_thumb_offset 60
+        vscrollbar_xoffset 100
+        vbox:
+            spacing 60
+            xysize (3127,1678)
+            for h in _history_list:
+                hbox:
+                    if h.who:
+                        spacing 276
+                        text h.who:
+                            substitute False
+                            size 65
+                            color '#808080'
+                            font gui.interface_text_font
 
-        for h in _history_list:
-
-            window:
-
-                ## 此代码可确保如果 history_height 为 None 时仍可正常显示条目。
-                has fixed:
-                    yfit True
-
-                if h.who:
-
-                    label h.who:
-                        style "history_name"
+                    $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
+                    text what:
                         substitute False
+                        size 65
+                        color '#000000'
+                        font gui.interface_text_font
 
-                        ## 从 Character 对象中获取叙述角色的文字颜色，如果设置了
-                        ## 的话。
-                        if "color" in h.who_args:
-                            text_color h.who_args["color"]
-
-                $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
-                text what:
-                    substitute False
-
-        if not _history_list:
-            label _("尚无对话历史记录。")
+    if not _history_list:
+        label _("尚无对话历史记录。")
 
 
 ## 此代码决定了允许在历史记录屏幕上显示哪些标签。
@@ -1169,104 +1284,128 @@ screen help():
 
     default device = "keyboard"
 
-    use game_menu(_("帮助"), scroll="viewport"):
+    use game_menu(_("帮助"), scroll="viewport")
 
-        style_prefix "help"
+    vbox:
+        spacing 153
+        pos (521,397)
 
-        vbox:
-            spacing 45
+        hbox:
+            spacing 60
+            imagebutton idle 'gui/neo/help/keyboard.png' hover 'gui/neo/help/keyboard_s.png' selected_idle 'gui/neo/help/keyboard_s.png' action SetScreenVariable("device", "keyboard")
+            imagebutton idle 'gui/neo/help/mouse.png' hover 'gui/neo/help/mouse_s.png' selected_idle 'gui/neo/help/mouse_s.png' action SetScreenVariable("device", "mouse")
 
-            hbox:
+        if device == "keyboard":
+            viewport:
+                mousewheel True 
+                draggable True
+                arrowkeys True
+                scrollbars 'vertical'
+                xysize (3127,1230)
+                vscrollbar_thumb 'gui/neo/misc/slider.png'
+                vscrollbar_base_bar 'gui/neo/misc/smaller_bar.png'
+                vscrollbar_xsize 120
+                vscrollbar_ysize 1230
+                vscrollbar_thumb_offset 60
+                vscrollbar_yoffset -20
+                vbox:
+                    spacing 130
+                    use keyboard_help()
+        elif device == "mouse":                
+            viewport:
+                mousewheel True 
+                draggable True
+                arrowkeys True
+                scrollbars None
+                xysize (3127,1230)
+                vbox:
+                    spacing 130
+                    use mouse_help()
 
-                textbutton _("键盘") action SetScreenVariable("device", "keyboard")
-                textbutton _("鼠标") action SetScreenVariable("device", "mouse")
-
-                if GamepadExists():
-                    textbutton _("手柄") action SetScreenVariable("device", "gamepad")
-
-            if device == "keyboard":
-                use keyboard_help
-            elif device == "mouse":
-                use mouse_help
-            elif device == "gamepad":
-                use gamepad_help
 style help_frame:
     xfill True
     yfill True
     background "gui/main_menu.png"
 
 screen keyboard_help():
+    hbox:
+        spacing 130
+        label _("回车") text_style 'help_label_text'
+        text _("推进对话并激活界面。") style 'help_text'
 
     hbox:
-        label _("回车")
-        text _("推进对话并激活界面。")
+        spacing 130
+        label _("空格") text_style 'help_label_text'
+        text _("在没有选择的情况下推进对话。") style 'help_text'
 
     hbox:
-        label _("空格")
-        text _("在没有选择的情况下推进对话。")
+        spacing 130
+        label _("方向键") text_style 'help_label_text'
+        text _("导航界面。") style 'help_text'
 
     hbox:
-        label _("方向键")
-        text _("导航界面。")
+        spacing 130
+        label _("Esc") text_style 'help_label_text'
+        text _("访问游戏菜单。") style 'help_text'
 
     hbox:
-        label _("Esc")
-        text _("访问游戏菜单。")
+        spacing 130
+        label _("键盘") text_style 'help_label_text'
+        text _("按住时快进对话。") style 'help_text'
 
     hbox:
-        label _("键盘")
-        text _("按住时快进对话。")
+        spacing 130
+        label _("Tab") text_style 'help_label_text'
+        text _("切换对话快进。") style 'help_text'
 
     hbox:
-        label _("Tab")
-        text _("切换对话快进。")
+        spacing 130
+        label _("上一页") text_style 'help_label_text'
+        text _("回退至先前的对话。") style 'help_text'
 
     hbox:
-        label _("上一页")
-        text _("回退至先前的对话。")
+        spacing 130
+        label _("下一页") text_style 'help_label_text'
+        text _("向前至后来的对话。") style 'help_text'
 
     hbox:
-        label _("下一页")
-        text _("向前至后来的对话。")
+        spacing 130
+        label "H" text_style 'help_label_text'
+        text _("隐藏用户界面。") style 'help_text'
 
     hbox:
-        label "H"
-        text _("隐藏用户界面。")
+        spacing 130
+        label "S" text_style 'help_label_text'
+        text _("截图。") style 'help_text'
 
-    hbox:
-        label "S"
-        text _("截图。")
-
-    hbox:
-        label "V"
-        text _("切换辅助{a=https://doc.renpy.cn/zh-CN/self_voicing.html}机器朗读{/a}。")
-
-    hbox:
-        label "Shift+A"
-        text _("打开无障碍菜单。")
 
 
 screen mouse_help():
 
     hbox:
-        label _("左键点击")
-        text _("推进对话并激活界面。")
+        spacing 130
+        label _("左键点击") text_style 'help_label_text'
+        text _("推进对话并激活界面。") style 'help_text'
 
     hbox:
-        label _("中键点击")
-        text _("隐藏用户界面。")
+        spacing 130
+        label _("中键点击") text_style 'help_label_text'
+        text _("隐藏用户界面。") style 'help_text'
 
     hbox:
-        label _("右键点击")
-        text _("访问游戏菜单。")
+        spacing 130
+        label _("右键点击") text_style 'help_label_text'
+        text _("访问游戏菜单。") style 'help_text'
 
     hbox:
-        label _("鼠标滚轮上")
-        text _("回退至先前的对话。")
+        spacing 130
+        label _("鼠标滚轮上") text_style 'help_label_text'
+        text _("回退至先前的对话。") style 'help_text'
 
     hbox:
-        label _("鼠标滚轮下")
-        text _("向前至后来的对话。")
+        spacing 130
+        label _("鼠标滚轮下") text_style 'help_label_text'
+        text _("向前至后来的对话。") style 'help_text'
 
 
 screen gamepad_help():
@@ -1310,6 +1449,7 @@ style help_button:
 
 style help_button_text:
     properties gui.text_properties("help_button")
+    font gui.interface_text_font
 
 style help_label:
     xsize 750
@@ -1319,6 +1459,15 @@ style help_label_text:
     size gui.text_size
     xalign 1.0
     textalign 1.0
+    font gui.interface_text_font
+    color '#000'
+
+style help_text:
+    size gui.text_size
+    xalign 1.0
+    textalign 1.0
+    font gui.interface_text_font
+    color '#808080'
 
 
 

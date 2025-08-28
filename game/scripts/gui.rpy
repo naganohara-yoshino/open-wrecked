@@ -65,8 +65,9 @@ define gui.name_text_font = "fs.ttf"
 define gui.name_text_bold = False
 
 ## 游戏外文本使用的字体。
-define gui.interface_text_font = "fs.ttf"
+define gui.interface_text_font = "fonts/MarukoGothicCJKsc-Medium.ttf"
 
+define gui.hyperlink_text_font = "fonts/MarukoGothicCJKsc-Medium.ttf"
 ## 普通对话文本的大小。
 define gui.text_size = 80
 
@@ -345,7 +346,7 @@ define gui.history_name_xalign = 1.0
 ## 对话文本的坐标、宽度和对齐方式。
 define gui.history_text_xpos = 510
 define gui.history_text_ypos = 6
-define gui.history_text_width = 2220
+define gui.history_text_width = 3220
 define gui.history_text_xalign = 0.0
 
 

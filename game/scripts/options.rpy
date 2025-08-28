@@ -61,31 +61,26 @@ define config.has_voice = True
 define config.main_menu_music = "audio/Impression/00.mp3"
 
 
-## 转场 ##########################################################################
-##
-## 这些变量用来控制某些事件发生时的转场。每一个变量都应设置成一个转场，或者是
-## None 来表示无转场。
-
-## 进入或退出游戏菜单。
-
-define config.enter_transition = dissolve
-define config.exit_transition = dissolve
-
 
 ## 各个游戏菜单之间的转场。
 
-define config.intra_transition = dissolve
+define config.intra_transition = Dissolve(.2)
 
 
 ## 载入游戏后使用的转场。
 
-define config.after_load_transition = dissolve
+define config.after_load_transition = Dissolve(.2)
 
 
 ## 在游戏结束之后进入主菜单时使用的转场。
 
 define config.end_game_transition = Fade(2,2,2)
 
+
+define config.game_main_transition = Dissolve(.2)
+define config.enter_transition = Dissolve(.2)
+define config.end_splash_transition = Dissolve(.2)
+define config.end_game_transition = Dissolve(.2)
 
 ## 用于控制在游戏开始标签不存在时转场的变量。作为替代，在显示初始化场景后使用
 ## with 语句。
@@ -192,3 +187,8 @@ init python:
 ## 与 itch.io 项目相关的用户名和项目名，以 / 分隔。
 
 # define build.itch_project = "renpytom/test-project"
+
+    
+    config.keymap['dismiss'].append('mousedown_5')
+    config.keymap['rollforward'].remove('mousedown_5')
+    
