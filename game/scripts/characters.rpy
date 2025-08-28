@@ -4,7 +4,7 @@ image snow = SnowBlossom("gui/snow/small.png",count=100)
 
 ## 萨瓦的大脸
 image sw_face:
-    "images/LH/sw_winter_giddy.png"
+    "images/LH/Sawa/sw_winter_giddy.png"
     xanchor 0.5
     xpos 1800
     yanchor 0.1
@@ -12,119 +12,119 @@ image sw_face:
     zoom 3
 ## 萨瓦-冬-轻佻
 image sw_winter_giddy:
-    "images/LH/sw_winter_giddy.png"
+    "images/LH/Sawa/sw_winter_giddy.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
 
 ## 萨瓦-冬-平静
 image sw_winter_calm:
-    "images/LH/sw_winter_calm.png"
+    "images/LH/Sawa/sw_winter_calm.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
 
 ## 萨瓦-冬-震惊
 image sw_winter_shock:
-    "images/LH/sw_winter_shock.png"
+    "images/LH/Sawa/sw_winter_shock.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
 
 ## 萨瓦-冬-阴险
 image sw_winter_insidious:
-    "images/LH/sw_winter_insidious.png"
+    "images/LH/Sawa/sw_winter_insidious.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
 
 ## 萨瓦-冬-醉酒
 image sw_winter_wrecked:
-    "images/LH/sw_winter_wrecked.png"
+    "images/LH/Sawa/sw_winter_wrecked.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
 
 ## 萨瓦-冬-微笑
 image sw_winter_smile:
-    "images/LH/sw_winter_smile.png"
+    "images/LH/Sawa/sw_winter_smile.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
 
 ## 萨瓦-冬-吃惊
 image sw_winter_surprised:
-    "images/LH/sw_winter_surprised.png"
+    "images/LH/Sawa/sw_winter_surprised.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
 
 ## 萨瓦-冬-愤怒
 image sw_winter_angry:
-    "images/LH/sw_winter_angry.png"
+    "images/LH/Sawa/sw_winter_angry.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
 
 ## 潮鸢-冬-愤怒
 image cy_winter_angry:
-    "images/LH/cy_winter_angry.png"
+    "images/LH/Chaoyuan/cy_winter_angry.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
 
 ## 潮鸢-冬-平静
 image cy_winter_calm:
-    "images/LH/cy_winter_calm.png"
+    "images/LH/Chaoyuan/cy_winter_calm.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
 
 ## 潮鸢-冬-叹气
 image cy_winter_sign:
-    "images/LH/cy_winter_sign.png"
+    "images/LH/Chaoyuan/cy_winter_sign.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
 
 ## 潮鸢-冬-嫌弃
 image cy_winter_lookdown:
-    "images/LH/cy_winter_lookdown.png"
+    "images/LH/Chaoyuan/cy_winter_lookdown.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
 
 ## 潮鸢-冬-慌乱
 image cy_winter_fluster:
-    "images/LH/cy_winter_fluster.png"
+    "images/LH/Chaoyuan/cy_winter_fluster.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
 
 ## 潮鸢-冬-欣喜
 image cy_winter_happy:
-    "images/LH/cy_winter_happy.png"
+    "images/LH/Chaoyuan/cy_winter_happy.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
 
 ## 潮鸢-冬-微笑
 image cy_winter_smile:
-    "images/LH/cy_winter_smile.png"
+    "images/LH/Chaoyuan/cy_winter_smile.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
 
 ## 潮鸢-冬-微笑-2
 image cy_winter_smile_2:
-    "images/LH/cy_winter_smile_2.png"
+    "images/LH/Chaoyuan/cy_winter_smile_2.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
 
 ## 潮鸢-冬-冷漠
 image cy_winter_cold:
-    "images/LH/cy_winter_cold.png"
+    "images/LH/Chaoyuan/cy_winter_cold.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
@@ -178,7 +178,7 @@ image ym_winter_cold:
     zoom 0.95
 
 layeredimage sw:
-    image_format 'images/LH/{image}.png'
+    image_format 'images/LH/Sawa/{image}.png'
     at transform:
         xanchor 0.5
         yanchor 0.47
@@ -209,7 +209,7 @@ layeredimage sw:
         attribute annoying:
             'sw_winter_annoying'
 layeredimage cy:
-    image_format 'images/LH/{image}.png'
+    image_format 'images/LH/Chaoyuan/{image}.png'
     at transform:
         xanchor 0.5
         yanchor 0.47
