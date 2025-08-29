@@ -160,6 +160,28 @@ init python:
 
     ## 将文件列为 None 来使其从构建的发行版中排除。
 
+    build.archive("story", "all")
+    build.archive("rpy", "all")
+    build.archive("art", "all")
+    build.archive("gui", "all")
+    build.archive("audio", "all")
+    build.archive("fonts", "all")
+    build.archive("music", "all")
+    build.archive("voice", "all")
+    build.archive("res", "all")
+    build.archive("misc", "all")
+    build.archive("tl", "all")
+
+    build.classify('**.rpy', None)
+    build.classify('**.rpyc', 'rpy')
+    build.classify('game/scripts/**', 'rpy')
+    build.classify('game/gui/**', 'gui')
+    build.classify('game/images/**', 'art')
+    build.classify('game/fonts/**', 'fonts')
+    build.classify('game/videos/**', 'video')
+    build.classify('game/audio/**', 'audio')
+    build.classify('game/misc/**', 'misc')
+    build.classify('game/tl/**', 'tl')
     build.classify('**~', None)
     build.classify('**.bak', None)
     build.classify('**/.**', None)
