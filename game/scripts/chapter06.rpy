@@ -45,7 +45,7 @@ scene 31_bedroom_of_sawa with dissolve
 "唉，不管怎样，就当是“鲁琴正义观”的奇迹，我们的乐队总算迈出第一步了"
 stop music fadeout 4
 scene 6_form_band with Fade(1,2,1)
-play music "audio/Happy/14.mp3" 
+play music "audio/Impression/20.mp3" 
 "今天是周六，萨瓦说家里正好没人，于是把我和玉米叫到家里讨论具体的组建事宜"
 "按照“惯例”，萨瓦在开场发表了她那中二至极的小作文"
 c "哎哎，怎么就“最后一支”主朋克了"
@@ -170,7 +170,7 @@ show ym ting_2 with dissolve
 y "j-pop吗……？那还是算了吧"
 c "作为备选方案吧"
 c "我想到一个，“浦行迪斯科”怎么样，我们不是正好在这里念书嘛"
-show ym kind with dissolve
+show ym kind 
 y "“借鉴”著名的“莫市舞厅”吗，可以倒可以，就是有点太刻意了"
 c "也是……"
 c "好吧，我没想到什么好点子"
