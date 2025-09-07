@@ -36,6 +36,7 @@ define gui.about = _p("""
 
 define build.name = "Wrecked"
 
+define debugger = False
 
 ## 音效和音乐 #######################################################################
 
@@ -57,34 +58,29 @@ define config.has_voice = True
 ## 将以下语句取消注释就可以设置标题界面播放的背景音乐文件。此文件将在整个游戏中
 ## 持续播放，直至音乐停止或其他文件开始播放。
 
-define config.main_menu_music = "audio/Impression/Larimar.mp3"
+define config.main_menu_music = "audio/Impression/00.mp3"
 
-
-## 转场 ##########################################################################
-##
-## 这些变量用来控制某些事件发生时的转场。每一个变量都应设置成一个转场，或者是
-## None 来表示无转场。
-
-## 进入或退出游戏菜单。
-
-define config.enter_transition = dissolve
-define config.exit_transition = dissolve
 
 
 ## 各个游戏菜单之间的转场。
 
-define config.intra_transition = dissolve
+define config.intra_transition = Dissolve(.2)
 
 
 ## 载入游戏后使用的转场。
 
-define config.after_load_transition = dissolve
+define config.after_load_transition = Dissolve(.2)
 
 
 ## 在游戏结束之后进入主菜单时使用的转场。
 
 define config.end_game_transition = Fade(2,2,2)
 
+
+define config.game_main_transition = Dissolve(.2)
+define config.enter_transition = Dissolve(.2)
+define config.end_splash_transition = Dissolve(.2)
+define config.end_game_transition = Dissolve(.2)
 
 ## 用于控制在游戏开始标签不存在时转场的变量。作为替代，在显示初始化场景后使用
 ## with 语句。
@@ -104,15 +100,15 @@ define config.window = "hide"
 
 ## 用于显示和隐藏对话框窗口的转场
 
-define config.window_show_transition = Dissolve(.2)
-define config.window_hide_transition = Dissolve(.2)
+define config.window_show_transition = Dissolve(0.2)
+define config.window_hide_transition = Dissolve(0.2)
 
 
 ## 默认设置 ########################################################################
 
 ## 控制默认的文字显示速度。默认的 0 为瞬间，而其他数字则是每秒显示出的字符数。
 
-default preferences.text_cps = 20
+default preferences.text_cps = 0
 
 
 ## 默认的自动前进延迟。数字越大，等待时间越长，有效范围为 0 - 30。
@@ -139,7 +135,7 @@ define config.save_directory = "Wrecked-1731845167"
 ##
 ## 在任务栏或 Dock 上显示的图标。
 
-define config.window_icon = "icon.png"
+define config.window_icon = "images/Icon/icon_leviathan.png"
 
 
 ## 构建配置 ########################################################################
@@ -164,6 +160,28 @@ init python:
 
     ## 将文件列为 None 来使其从构建的发行版中排除。
 
+    build.archive("story", "all")
+    build.archive("rpy", "all")
+    build.archive("art", "all")
+    build.archive("gui", "all")
+    build.archive("audio", "all")
+    build.archive("fonts", "all")
+    build.archive("music", "all")
+    build.archive("voice", "all")
+    build.archive("res", "all")
+    build.archive("misc", "all")
+    build.archive("tl", "all")
+
+    build.classify('**.rpy', None)
+    build.classify('**.rpyc', 'rpy')
+    build.classify('game/scripts/**', 'rpy')
+    build.classify('game/gui/**', 'gui')
+    build.classify('game/images/**', 'art')
+    build.classify('game/fonts/**', 'fonts')
+    build.classify('game/videos/**', 'video')
+    build.classify('game/audio/**', 'audio')
+    build.classify('game/misc/**', 'misc')
+    build.classify('game/tl/**', 'tl')
     build.classify('**~', None)
     build.classify('**.bak', None)
     build.classify('**/.**', None)
@@ -191,3 +209,8 @@ init python:
 ## 与 itch.io 项目相关的用户名和项目名，以 / 分隔。
 
 # define build.itch_project = "renpytom/test-project"
+
+    
+    config.keymap['dismiss'].append('mousedown_5')
+    config.keymap['rollforward'].remove('mousedown_5')
+    

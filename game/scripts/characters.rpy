@@ -1,55 +1,286 @@
 ## 立绘的设定文件
+## 雪花
+image snow = SnowBlossom("gui/snow/small.png",count=100)
 
 ## 萨瓦的大脸
 image sw_face:
-    "images/LH/sw_winter_giddy.png"
+    "images/LH/Sawa/sw_winter_giddy.png"
     xanchor 0.5
     xpos 1800
     yanchor 0.1
     ypos 880
     zoom 3
-
 ## 萨瓦-冬-轻佻
 image sw_winter_giddy:
-    "images/LH/sw_winter_giddy.png"
+    "images/LH/Sawa/sw_winter_giddy.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+
+## 萨瓦-冬-平静
+image sw_winter_calm:
+    "images/LH/Sawa/sw_winter_calm.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+
+## 萨瓦-冬-震惊
+image sw_winter_shock:
+    "images/LH/Sawa/sw_winter_shock.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+
+## 萨瓦-冬-阴险
+image sw_winter_insidious:
+    "images/LH/Sawa/sw_winter_insidious.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+
+## 萨瓦-冬-醉酒
+image sw_winter_wrecked:
+    "images/LH/Sawa/sw_winter_wrecked.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+
+## 萨瓦-冬-微笑
+image sw_winter_smile:
+    "images/LH/Sawa/sw_winter_smile.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+
+## 萨瓦-冬-吃惊
+image sw_winter_surprised:
+    "images/LH/Sawa/sw_winter_surprised.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+
+## 萨瓦-冬-愤怒
+image sw_winter_angry:
+    "images/LH/Sawa/sw_winter_angry.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
 
 ## 潮鸢-冬-愤怒
 image cy_winter_angry:
-    "images/LH/cy_winter_angry.png"
+    "images/LH/Chaoyuan/cy_winter_angry.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
 
 ## 潮鸢-冬-平静
 image cy_winter_calm:
-    "images/LH/cy_winter_calm.png"
+    "images/LH/Chaoyuan/cy_winter_calm.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
 
 ## 潮鸢-冬-叹气
 image cy_winter_sign:
-    "images/LH/cy_winter_sign.png"
+    "images/LH/Chaoyuan/cy_winter_sign.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
 
 ## 潮鸢-冬-嫌弃
 image cy_winter_lookdown:
-    "images/LH/cy_winter_lookdown.png"
+    "images/LH/Chaoyuan/cy_winter_lookdown.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
 
 ## 潮鸢-冬-慌乱
 image cy_winter_fluster:
-    "images/LH/cy_winter_fluster.png"
+    "images/LH/Chaoyuan/cy_winter_fluster.png"
     xanchor 0.5
     yanchor 0.47
     ypos 2160
-    
-    
 
+## 潮鸢-冬-欣喜
+image cy_winter_happy:
+    "images/LH/Chaoyuan/cy_winter_happy.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+
+## 潮鸢-冬-微笑
+image cy_winter_smile:
+    "images/LH/Chaoyuan/cy_winter_smile.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+
+## 潮鸢-冬-微笑-2
+image cy_winter_smile_2:
+    "images/LH/Chaoyuan/cy_winter_smile_2.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+
+## 潮鸢-冬-冷漠
+image cy_winter_cold:
+    "images/LH/Chaoyuan/cy_winter_cold.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+
+## 玉米-冬-微笑
+image ym_winter_smile:
+    "images/LH/ym_winter_smile.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+    zoom 0.95
+
+## 玉米-冬-和蔼
+image ym_winter_kind:
+    "images/LH/ym_winter_kind.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+    zoom 0.95
+
+## 玉米-冬-欣喜
+image ym_winter_happy:
+    "images/LH/ym_winter_happy.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+    zoom 0.95
+
+## 玉米-冬-挺好颜
+image ym_winter_ting:
+    "images/LH/ym_winter_ting.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+    zoom 0.95
+
+## 玉米-冬-挺好颜2
+image ym_winter_ting_2:
+    "images/LH/ym_winter_ting_2.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+    zoom 0.95
+
+## 玉米-冬-面无表情
+image ym_winter_cold:
+    "images/LH/ym_winter_cold.png"
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+    zoom 0.95
+
+layeredimage sw:
+    image_format 'images/LH/Sawa/{image}.png'
+    at transform:
+        xanchor 0.5
+        yanchor 0.47
+        ypos 2160
+    group expressions:
+        attribute giddy:
+            'sw_winter_giddy'
+        attribute calm:
+            'sw_winter_calm'
+        attribute insidious:
+            'sw_winter_insidious'
+        attribute surprised:
+            'sw_winter_surprised'
+        attribute wrecked:
+            'sw_winter_wrecked'
+        attribute wrecked_2:
+            'sw_winter_wrecked_2'
+        attribute smile:
+            'sw_winter_smile'
+        attribute shock:
+            'sw_winter_shock'
+        attribute angry:
+            'sw_winter_angry'
+        attribute frivolous:
+            'sw_winter_frivolous'
+        attribute brave:
+            'sw_winter_brave'
+        attribute annoying:
+            'sw_winter_annoying'
+layeredimage cy:
+    image_format 'images/LH/Chaoyuan/{image}.png'
+    at transform:
+        xanchor 0.5
+        yanchor 0.47
+        ypos 2160
+    group expressions:
+        attribute angry:
+            'cy_winter_angry'
+        attribute annoying:
+            'cy_winter_annoying'
+        attribute calm:
+            'cy_winter_calm'
+        attribute cold:
+            'cy_winter_cold'
+        attribute fluster:
+            'cy_winter_fluster'
+        attribute happy:
+            'cy_winter_happy'
+        attribute lookdown:
+            'cy_winter_lookdown'
+        attribute speechless:
+            'cy_winter_speechless'
+        attribute sign:
+            'cy_winter_sign'
+        attribute sigh:
+            'cy_winter_sign'
+        attribute smile:
+            'cy_winter_smile'
+        attribute smile_2:
+            'cy_winter_smile_2'
+        attribute tearout:
+            'cy_winter_tearout'
+        attribute angry_smile:
+            'cy_winter_angry_smile'
+        attribute worried:
+            'cy_winter_worried'
+layeredimage ym:
+    image_format 'images/LH/ym_winter_{image}.png'
+    at transform:
+        xanchor 0.5
+        yanchor 0.47
+        ypos 2160
+        zoom 0.95
+    group expressions:
+        attribute cold:
+            'cold'
+        attribute happy:
+            'happy'
+        attribute kind:
+            'kind'
+        attribute smile:
+            'smile'
+        attribute ting:
+            'ting'
+        attribute ting_2:
+            'ting_2'
+        attribute sad:
+            'sad'
+        attribute amiable:
+            'amiable'
+
+
+image bl_winter_normal:
+    'images/LH/Baile/baile_winter_normal.png'
+    xanchor 0.5
+    yanchor 0.47
+    ypos 1200
+
+
+image sw_mother:
+    'images/LH/sw_mother.png'
+    xanchor 0.5
+    yanchor 0.47
+    ypos 2160
+    zoom 1.0

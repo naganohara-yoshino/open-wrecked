@@ -1,6 +1,7 @@
 ############### 转场的一些预定义 ###############
 
 define dissolve_1 = Dissolve(1.0)
+define fade1 = Fade(1.0,3.0,1.0)
 
 ## 可以控制的震动 下面是两个官方的例子
 ## (0, 10), (0, -10) 是移动幅度，改数字可以增加幅度。
@@ -39,18 +40,21 @@ transform move_left_t:
 
 ## 向右移动
 transform move_right_t:
-    alpha 0.0
-    xpos -50
     parallel:
         easein_quart 1.0 alpha 1.0
     parallel:
-        easein_quart 1.0 xpos 0
+        easein_quart 1.0 xpos 1300
+    parallel:
+        yoffset 0
+        linear 0.2 yoffset 40
+        linear 0.2 yoffset 0
+        repeat 2
 
 ## 背景模糊
 transform bg_blur_t:
-    blur 40
+    blur 30
     parallel:
-        linear 1.5 blur 0
+        linear 2 blur 0
 
 ## 镜头拉近
 transform zoom_in_t:
@@ -69,14 +73,14 @@ transform zoom_out_t:
 ## 上下动
 transform y_move_t:
     yoffset 0
-    linear 0.3 yoffset 10
-    linear 0.3 yoffset 0
+    linear 0.1 yoffset 40
+    linear 0.1 yoffset 0
     repeat 2
 
 ## 左右动
 transform x_move_t:
     xoffset 0
-    linear 0.1 xoffset 20
+    linear 0.1 xoffset 40
     linear 0.1 xoffset 0
     repeat 2
 
@@ -111,6 +115,15 @@ transform black_white_t:
 transform coloriz_t:
     linear 1.0 matrixcolor ColorizeMatrix("#a46565", "#2034e9")
 
+transform _left:
+    xpos 1000
+
+transform _right:
+    xpos 3840-1000
+
+
+transform _center:
+    xalign 0.6
 ############### 使用指南 ###############
 
 #   scene street day at coloriz_t
@@ -177,3 +190,16 @@ label bg_transition_enable:
         _dismiss_pause = True
         quick_menu = True
     return
+
+#   睁闭眼睛特效
+init python:
+    def eyewarp(x):
+        return x**1.33
+    eye_open = ImageDissolve("gui/transition/eye.png", 0.5, ramplen=128, reverse=False, time_warp=eyewarp)
+    eye_shut = ImageDissolve("gui/transition/eye.png", 0.5, ramplen=128, reverse=True, time_warp=eyewarp)
+image black:
+    Solid("#000")
+image white:
+    Solid("#FFF")
+
+

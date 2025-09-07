@@ -33,14 +33,13 @@ screen chat_screen(group_title, dialog):
                     if i < message_index:
                         $ info = msg.get("extra_display", None)
                         if info:
-                            null height 20
+                            null height 30
                             text info style "info_text" xalign 0.5
                         use message(**msg)
 
         key "mouseup_1" action If(message_index  == len(dialog),
             [
-                Hide("chat_screen", transition = Dissolve(1)), 
-                Return(0)
+                Hide("chat_screen", transition = Dissolve(1)), Return(0)
             ],
             [
                 IncrementScreenVariable("message_index"),
@@ -54,10 +53,14 @@ screen chat_screen(group_title, dialog):
 
             font "ht.ttf"
             size 60
+    
+    #检测跳过——如果renpy.get_skipping()为True，自动触发一个Hide()，隐藏界面
+    if renpy.get_skipping():
+        timer 0.0000000001 action Hide()
+
 
 
 screen message(*, name, avatar, from_myself = False, **kw):
-
     if not from_myself:
         hbox:
             xsize 810
@@ -67,7 +70,9 @@ screen message(*, name, avatar, from_myself = False, **kw):
 
             vbox:
                 null height 20
-                add avatar 
+                add avatar:
+                    xsize 100
+                    ysize 100
 
             vbox:
                 xsize 700
@@ -107,7 +112,6 @@ screen message(*, name, avatar, from_myself = False, **kw):
                 null height 20
                 add avatar 
 
-
 screen img_bubble(*, img):
     
     python:
@@ -124,10 +128,11 @@ screen img_bubble(*, img):
             add result zoom ratio
 
 
+
 screen msg_bubble(*, content, from_myself = False):
     frame:
         padding (40,40)
-        xmaximum 700
+        xsize None
 
         if from_myself:
             background Frame("gui/simulatedphone/rectangle_blue.png", 25, 25, 25, 25)
@@ -149,13 +154,15 @@ transform message_appear:
     parallel:
         easein_back 0.4 yoffset 0     
 
-transform phone_appear:
+
+transform phone_appear: #Used only when the dialogue have one element
     xcenter 0.5
     yalign 0.5
 
     on show:
         yoffset 1080
         easein_back 1.0 yoffset 0
+
 
 
 style msg_bubble_text:
@@ -167,6 +174,7 @@ style info_text:
     color "#9B9B9B"
     size 45
 
+# screen img_message(*, name, img, avatar):
 
 ## 显示手机时用的模糊
 transform blur_background:

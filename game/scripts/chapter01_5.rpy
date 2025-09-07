@@ -1,7 +1,9 @@
 label chapter01_5:
     $ quick_menu = False
-    scene transition1 with Fade(2,2,2)
-    with Pause(2)
+    scene black with Dissolve(1)
+    with Pause(1)
+    scene zc1 with Fade(1,0.5,1.5,color = "#ffffff")
+    with Pause(3)
     scene black with Fade(2,2,0)
     screen dream:
         frame:
@@ -16,7 +18,7 @@ label chapter01_5:
     with Pause(3)
     hide screen dream with Fade(1,0,0)
     show 8_street with Fade(0,0,2)
-    play music "audio/Sad/Seabed.ogg" fadein 4
+    play music "audio/Sad/07.ogg" fadein 4
     $ quick_menu = True
     "“已经入秋了啊——”" with Dissolve(1)
     """
@@ -47,8 +49,12 @@ label chapter01_5:
 
     转而一想，为什么要这么刻薄呢。不知为何觉得对不起她
     
-    带她去药店买药之后，我们又走回后墙。沉默良久，我尴尬地开口了
+    带她去药店买药之后，我们又走回后墙
+    
+    沉默良久，我尴尬地开口了
     """
+    show bl_winter_normal at _left with dissolve
+    show cy calm at _right with dissolve
     c"你可真是个怪人啊，秋夜讨药什么的"
     bn"你可真是个好人啊，秋夜给药什么的"
     c"……"
@@ -58,11 +64,13 @@ label chapter01_5:
     c"""
     哦。
     
-    ……如若真的有奇迹的力量就好了
+    ……如若真的有奇迹的力量就好了……
     """
     bn"你也祈求奇迹吗？"
     c"只是想追寻梦的延续罢了"
     bn"“梦的延续”吗？……"
+    hide bl_winter_normal with dissolve
+    hide cy with dissolve
     """
     白发少女不知从哪拿出了一把吉他，说是要给我看“梦的延续”
     
@@ -77,11 +85,11 @@ label chapter01_5:
     bn"""
     但这一曲并不是奇迹的力量——
     
-    再见了，若有机会，愿为君女
+    再见了，若有机会……
     """
-    "说完她就走了"
+    "说完她就走了，后面的话都没有听清"
     c"""
-    喂，这句话是什么意思！
+    喂，什么意思！
     
     ……如此刻薄的我也配奇迹的力量吗？……
     """
@@ -97,6 +105,7 @@ label chapter01_5:
     scene 8_street with Fade(2,2,2)
     "少女消失后，演奏的歌曲还在延伸——" with Dissolve(1)
     "天地也为之入了迷，周围的景色变得愈加虚幻了"
+    show snow
     "——霎时，阴沉的天空中竟卷下一场纷纷扬扬的大雪来" with Dissolve(1)
    
 
@@ -117,5 +126,6 @@ label chapter01_5:
 
     脚步愈迷，如舞，如禅
     """
+
 
 

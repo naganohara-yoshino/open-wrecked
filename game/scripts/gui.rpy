@@ -59,14 +59,15 @@ define gui.interface_text_color = '#ffffff'
 define gui.text_font = "systsemi.otf"
 
 ## 角色名称使用的字体。
-define gui.name_text_font = "dl.ttf"
+define gui.name_text_font = "fs.ttf"
 
 ## 给角色名加粗
 define gui.name_text_bold = False
 
 ## 游戏外文本使用的字体。
-define gui.interface_text_font = "fs.ttf"
+define gui.interface_text_font = "fonts/MarukoGothicCJKsc-Medium.ttf"
 
+define gui.hyperlink_text_font = "fonts/MarukoGothicCJKsc-Medium.ttf"
 ## 普通对话文本的大小。
 define gui.text_size = 80
 
@@ -240,7 +241,7 @@ define gui.file_slot_rows = 2
 ## 这些变量控制各种用户界面元素的位置和间距。
 
 ## 导航按钮左侧相对于屏幕左侧的位置。
-define gui.navigation_xpos = 120
+define gui.navigation_xpos = 145
 
 ## 快进指示器的垂直位置。
 define gui.skip_ypos = 30
@@ -252,7 +253,7 @@ define gui.notify_ypos = 135
 define gui.choice_spacing = 66
 
 ## 标题菜单和游戏菜单的导航部分中的按钮。
-define gui.navigation_spacing = 20
+define gui.navigation_spacing = 80
 
 ## 控制设置项目之间的间隔量。
 define gui.pref_spacing = 30
@@ -302,17 +303,17 @@ define gui.frame_tile = False
 ## 水平条，滚动条和滑块的高度。垂直条，滚动条和滑块的宽度。
 define gui.bar_size = 75
 define gui.scrollbar_size = 36
-define gui.slider_size = 75
+define gui.slider_size = 190
 
 ## 若为 True，则条的底图平铺。若为 False，则条的底图线性缩放。
 define gui.bar_tile = False
 define gui.scrollbar_tile = False
-define gui.slider_tile = False
+define gui.slider_tile = True
 
 ## 水平边框。
 define gui.bar_borders = Borders(12, 12, 12, 12)
 define gui.scrollbar_borders = Borders(12, 12, 12, 12)
-define gui.slider_borders = Borders(12, 12, 12, 12)
+define gui.slider_borders = Borders(150, 0, 150, 0)
 
 ## 垂直边框。
 define gui.vbar_borders = Borders(12, 12, 12, 12)
@@ -345,7 +346,7 @@ define gui.history_name_xalign = 1.0
 ## 对话文本的坐标、宽度和对齐方式。
 define gui.history_text_xpos = 510
 define gui.history_text_ypos = 6
-define gui.history_text_width = 2220
+define gui.history_text_width = 3220
 define gui.history_text_xalign = 0.0
 
 
