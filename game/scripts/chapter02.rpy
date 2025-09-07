@@ -258,7 +258,7 @@ label chapter02:
 
     冬风比想象中的还要冷，摆着皇帝的仪仗似的，大摇大摆地在街上闯过
 
-    忘了戴围巾的我哆哆嗦嗦地走着，唉，出来的还是太匆忙了
+    我哆哆嗦嗦地走着，唉，出来的还是太匆忙了
 
     约定地点离学校并不远，据说是个没人住的“鬼小区”
 
@@ -700,15 +700,15 @@ label chapter02:
     
     所以，我并不讨厌这里，甚至我要说
     """
-    screen sentence_3:
+    screen sentence_4:
         vbox:
             xalign 0.5
             yalign 0.5
             text "即使身处荒凉废墟之中，"outlines[(absolute(5), "#ffffff", absolute(0), absolute(0))] color"#000000" size 160 
             text "也自以为是无限繁华之王！"outlines[(absolute(5), "#ffffff", absolute(0), absolute(0))] color"#000000" size 160 
-    show screen sentence_3 with Dissolve(1)
+    show screen sentence_4 with Dissolve(1)
     with Pause(3)
-    hide screen sentence_3 with Dissolve(1)
+    hide screen sentence_4 with Dissolve(1)
     with Pause(1)
     c"“希望”啊——好词" with Dissolve(1)
     c"""

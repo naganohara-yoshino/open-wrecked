@@ -10,7 +10,7 @@ with Pause(3)
 scene black with Fade(1.5,2,1)
 with Pause(1)
 stop music fadeout 2.0
-screen sentence_4:
+screen sentence_5:
     vbox:
         xalign 0.5
         yalign 0.5
@@ -19,9 +19,9 @@ screen sentence_4:
                 outlines[(absolute(5), "#ffffff", absolute(0), absolute(0))] 
                 color"#000000" 
                 size 160
-show screen sentence_4 with Dissolve(1)
+show screen sentence_5 with Dissolve(1)
 with Pause(3)
-hide screen sentence_4 with Dissolve(1)
+hide screen sentence_5 with Dissolve(1)
 with Pause(1)
 play music "audio/Calm/12.mp3" 
 s "尽管一穷二白，但我们已然肩负延续主朋的最终使命!"

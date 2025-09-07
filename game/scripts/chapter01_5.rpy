@@ -53,6 +53,8 @@ label chapter01_5:
     
     沉默良久，我尴尬地开口了
     """
+    show bl_winter_normal at _left with dissolve
+    show cy calm at _right with dissolve
     c"你可真是个怪人啊，秋夜讨药什么的"
     bn"你可真是个好人啊，秋夜给药什么的"
     c"……"
@@ -62,11 +64,13 @@ label chapter01_5:
     c"""
     哦。
     
-    ……如若真的有奇迹的力量就好了
+    ……如若真的有奇迹的力量就好了……
     """
     bn"你也祈求奇迹吗？"
     c"只是想追寻梦的延续罢了"
     bn"“梦的延续”吗？……"
+    hide bl_winter_normal with dissolve
+    hide cy with dissolve
     """
     白发少女不知从哪拿出了一把吉他，说是要给我看“梦的延续”
     
